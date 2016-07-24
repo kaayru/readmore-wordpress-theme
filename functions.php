@@ -103,6 +103,7 @@ add_action( 'widgets_init', 'readmore_widgets_init' );
  */
 function readmore_scripts() {
 	wp_enqueue_style( 'readmore-style', get_template_directory_uri() . '/css/style.min.css' );
+	wp_enqueue_style( 'readmore-color-theme', get_template_directory_uri() . '/css/color-themes/theme' . get_theme_mod('readmore_color_scheme', 1) . '.css' );
 
 	wp_enqueue_script( 'readmore-libraries', get_template_directory_uri() . '/js/libraries.min.js', array(), '20151215', true );
 

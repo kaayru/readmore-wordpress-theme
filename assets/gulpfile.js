@@ -62,9 +62,15 @@ gulp.task('versionning', function() {
  */
 gulp.task('sass', function () {
     //Generates a sourcemap
-    gulp.src('./sass/main.scss')
+    gulp.src(['./sass/main.scss', './sass/color-themes/*.scss'])
         .pipe(gulpIf(isDev, sourcemaps.init()))
         .pipe(gulpIf(isDev, sourcemaps.write('./../css/')));
+
+    gulp.src('./sass/color-themes/*.scss')
+        .pipe(sass()).on('error', onError)
+        .pipe(autoprefixer({ browsers: ["IE >= 10", 'Android >= 4.4', 'Firefox >= 24', 'iOS >= 7', '> 2%'] }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./../css/color-themes/'));
 
     //Compile & minify
     return gulp.src('./sass/main.scss')

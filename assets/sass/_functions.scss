@@ -1,0 +1,3 @@
+@function readmore-color($key: 'primary') {
+  	@return map-get($readmore-colors, $key);
+}
