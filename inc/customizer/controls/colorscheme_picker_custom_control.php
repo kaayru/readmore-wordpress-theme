@@ -27,6 +27,24 @@ if (class_exists('WP_Customize_Control'))
                     <input type="radio" value="2" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
                     <img src="<?php echo $imageDirectory; ?>scheme2.jpg" alt="Scheme 2" />
                 </label>
+                <label>
+                    <input type="radio" value="3" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
+                    <img src="<?php echo $imageDirectory; ?>scheme3.jpg" alt="Scheme 3" />
+                </label>
+            </div>
+            <div class="colorscheme-customizer-control">
+                <label>
+                    <input type="radio" value="4" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
+                    <img src="<?php echo $imageDirectory; ?>scheme4.jpg" alt="Scheme 4" />
+                </label>
+                <label>
+                    <input type="radio" value="5" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
+                    <img src="<?php echo $imageDirectory; ?>scheme5.jpg" alt="Scheme 5" />
+                </label>
+                <label>
+                    <input type="radio" value="6" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
+                    <img src="<?php echo $imageDirectory; ?>scheme6.jpg" alt="Scheme 6" />
+                </label>
             </div>
         <?php }
     }
