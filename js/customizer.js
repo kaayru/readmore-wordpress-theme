@@ -35,8 +35,14 @@
 				} );
 				$( '.site-title a, .site-description' ).css( {
 					'color': to
-				} );
+				} ); 
 			}
 		} );
 	} );
+
+	// Background Color
+  	wp.customize('readmore_color_scheme', function(value) {
+    	value.bind(function(to) {
+    	});
+  	});
 } )( jQuery );

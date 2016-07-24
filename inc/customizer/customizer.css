@@ -1,0 +1,20 @@
+.colorscheme-customizer-control {
+	display: flex;
+}
+
+.colorscheme-customizer-control input {
+	display: none;
+}
+
+.colorscheme-customizer-control label {
+	display: block;
+	margin-right: 10px;
+}
+
+.colorscheme-customizer-control label img {
+	border: 2px solid white;
+}
+
+.colorscheme-customizer-control input:checked+img {
+	border: 2px solid #008ec2;
+}
