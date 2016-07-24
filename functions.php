@@ -104,10 +104,6 @@ add_action( 'widgets_init', 'readmore_widgets_init' );
 function readmore_scripts() {
 	wp_enqueue_style( 'readmore-style', get_template_directory_uri() . '/css/style.min.css' );
 
-	wp_enqueue_script( 'readmore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'readmore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'readmore-libraries', get_template_directory_uri() . '/js/libraries.min.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'readmore-scripts', get_template_directory_uri() . '/js/script.min.js', array(), '20151215', true );
