@@ -40,9 +40,12 @@
 		} );
 	} );
 
-	// Background Color
+	// Color Theme
   	wp.customize('readmore_color_scheme', function(value) {
     	value.bind(function(to) {
+    		var link_element = $('link#readmore-color-theme-css');
+    		var stylesheet_url = link_element.attr('href');
+    		$('link#readmore-color-theme-css').attr('href',stylesheet_url.replace(/(theme[0-9]+\.css)/, 'theme' + to + '.css'));
     	});
   	});
 } )( jQuery );
