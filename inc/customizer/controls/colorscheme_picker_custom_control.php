@@ -13,7 +13,7 @@ if (class_exists('WP_Customize_Control'))
            {
             $this->type = "radio";
 
-            $imageDirectory = get_stylesheet_directory_uri() . '/inc/customizer/img/';
+            $imageDirectory = get_stylesheet_directory_uri() . '/inc/customizer/img/color-schemes/';
             ?>
             
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
