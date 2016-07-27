@@ -18,7 +18,7 @@ function readmore_customizer_colortheme($wp_customize) {
             'label'       => _t( 'Main Color Theme' ),
             'section'     => 'readmore_color_theme',
             'settings'    => 'readmore_color_scheme',
-            'description' => _t( 'Pick a color' ),
+            'description' => _t( 'Pick a color scheme' ),
         )
     ) );
 }

@@ -17,33 +17,34 @@ if (class_exists('WP_Customize_Control'))
             ?>
             
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+            <em><?php echo esc_html( $this->description ); ?></em><br /><br />
 
-            <div class="colorscheme-customizer-control">
+            <div class="layout-customizer-control">
                 <label>
-                    <input type="radio" value="1" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "full_width"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme1.jpg" alt="Scheme 1" />
+                    <input type="radio" value="1" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme1"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme1.jpg'); ?>" alt="<?php _et('Scheme 1'); ?>" />
                 </label>
                 <label>
-                    <input type="radio" value="2" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme2.jpg" alt="Scheme 2" />
+                    <input type="radio" value="2" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme2"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme2.jpg'); ?>" alt="<?php _et('Scheme 2'); ?>" />
                 </label>
                 <label>
-                    <input type="radio" value="3" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme3.jpg" alt="Scheme 3" />
+                    <input type="radio" value="3" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme3"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme3.jpg'); ?>" alt="<?php _et('Scheme 3'); ?>" />
                 </label>
             </div>
-            <div class="colorscheme-customizer-control">
+            <div class="layout-customizer-control">
                 <label>
-                    <input type="radio" value="4" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme4.jpg" alt="Scheme 4" />
+                    <input type="radio" value="4" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme4"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme4.jpg'); ?>" alt="<?php _et('Scheme 4'); ?>" />
                 </label>
                 <label>
-                    <input type="radio" value="5" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme5.jpg" alt="Scheme 5" />
+                    <input type="radio" value="5" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme5"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme5.jpg'); ?>" alt="<?php _et('Scheme 5'); ?>" />
                 </label>
                 <label>
-                    <input type="radio" value="6" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>scheme6.jpg" alt="Scheme 6" />
+                    <input type="radio" value="6" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme6"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme6.jpg'); ?>" alt="<?php _et('Scheme 6'); ?>" />
                 </label>
             </div>
         <?php }
