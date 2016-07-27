@@ -15,7 +15,6 @@ require_once get_template_directory() . '/inc/customizer/colortheme.php';
 function readmore_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
 add_action( 'customize_register', 'readmore_customize_register' );
 
