@@ -1,56 +1,25 @@
-/**
- * Bootstrap
- * the variables are in the variables.less file
- */
+@function readmore-color($key: 'primary') {
+  	@return map-get($colors, $key);
+}
+
+$primary-color: readmore-color('primary');
+$secondary-color: readmore-color('secondary');
+$accent-color: readmore-color('accent');
+$foreground-color: readmore-color('foreground');
+$background-color: readmore-color('background');
+
 @import "bootstrap";
-
-/**
- * Fonts
- */
+@import "functions";
 @import "fonts";
-
-/**
- * Sprites
- */
 @import "sprite";
-
-/**
- * Media queries
- */
 @import "media_queries";
 
-/**
- * Global styles & classes
- */
 @import "global";
-
-/**
- * Forms
- */
 @import "forms";
 
-/**
- * HEADER
- */
 @import "header";
-
-
-/**
- * MENU
- */
 @import "menu";
-
-/**
- * FOOTER
- */
 @import "footer";
 
-/**
- * Components
- */
 @import "components";
-
-/**
- * Pages
- */
 @import "pages";

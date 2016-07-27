@@ -1,0 +1,14 @@
+body {
+	background-color: $background-color;
+	color: $primary-color;
+}
+
+a {
+	color: $accent-color;
+	@include color-transition();
+
+	&:hover,
+	&:focus {
+		color: darken($accent-color, 10);
+	}
+}

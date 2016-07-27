@@ -1,8 +1,6 @@
 // http://www.palettable.io/4D2824-E4D91E-A8B519-FFFFFF-216A72
 
-@import "../functions";
-
-$readmore-colors: (
+$colors: (
 	'primary': #AAFFF7, 
 	'accent': #216A72,
 	'secondary': #A8B519,
@@ -10,8 +8,4 @@ $readmore-colors: (
 	'background': #4D2824
 );
 
-$background-color: readmore-color('background');
-
-body {
-	background-color: $background-color;
-}
+@import '../main';

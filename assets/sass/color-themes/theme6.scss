@@ -1,8 +1,6 @@
 // http://www.palettable.io/DECDBD-D6C1AB-A15408-FFFFFF-95A800
 
-@import "../functions";
-
-$readmore-colors: (
+$colors: (
 	'primary': #D6C1AB, 
 	'accent': #95A800,
 	'secondary': #A15408,
@@ -10,8 +8,4 @@ $readmore-colors: (
 	'background': #DECDBD
 );
 
-$background-color: readmore-color('background');
-
-body {
-	background-color: $background-color;
-}
+@import '../main';
