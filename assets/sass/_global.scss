@@ -16,7 +16,7 @@ button,
 input,
 select,
 textarea {
-	color: $color__primary;
+	color: $color__text;
 	font-family: $font__main;
 	@include font-size-paragraph();
 	line-height: $font__line-height-body;
@@ -70,16 +70,16 @@ big {
 
 //== Links
 a {
-	color: $color__accent;
+	color: $color__primary;
 	@include color-transition();
 
 	&:visited {
-		color: darken($color__accent, 10);
+		color: darken($color__primary, 10);
 	}
 	&:hover,
 	&:focus,
 	&:active {
-		color: darken($color__accent, 10);
+		color: $color__accent;
 		text-decoration: none;
 	}
 	&:focus {
