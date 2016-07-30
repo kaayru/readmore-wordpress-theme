@@ -13,6 +13,9 @@ body {
 			@include sm() {
 				transform: translateX(calc((100% - #{($toggle_size+$spacing__gutter*4)}) * -1));
 			}
+			@include md() {
+				transform: none;
+			}
 		}
 		overflow: hidden;
 	}
@@ -30,6 +33,11 @@ body {
     	top: $spacing__gutter;
     	right: $spacing__gutter;
     }
+
+    @include md() {
+    	position: static;
+    }
+
     .menu {
     	position: fixed;
     	top: 0;
@@ -38,6 +46,12 @@ body {
     	width: 100%;
     	background-color: $color__foreground;
 		overflow-y: scroll;
+
+		@include md() {
+			position: static;
+			height: auto;
+			overflow: visible;
+		}
     }
 
 	ul {
@@ -64,21 +78,43 @@ body {
 			a:hover,
 			a.focus {
 			}
+
+			@include md() {
+				position: absolute;
+			    background: $color__foreground;
+			    top: 50px;
+			    left: 0;
+			    overflow: visible;
+			    z-index: 1;
+
+				ul {
+					right: -100%;
+					left: 100%;
+					top: 0;
+					bottom: inherit;
+					width: auto;
+				}
+			}
 		}
 
 		li:hover > ul,
 		li.focus > ul {
 			display: block;
 		}
+
+		@include md() {
+			display: flex;
+		}
 	}
 
 	li {
 		position: relative;
-		padding: 15px 20px;
+		padding: $spacing__gutter 20px;
 		border-bottom: 1px solid $color__grey-light;
 
 		&:hover > a,
 		&.focus > a {
+			color: $color__primary;
 		}
 
 		&.menu-item-has-children {
@@ -92,8 +128,16 @@ body {
 		li {
 			border-top: 1px solid $color__grey-light;
 			border-bottom: none;
-			margin-top: 15px;
+			margin-top: $spacing__gutter;
 			padding-bottom: 0;
+		}
+
+		@include md() {
+			&, li {
+				border: none;
+				margin-top: 0;
+				padding-bottom: $spacing__gutter;
+			}
 		}
 	}
 
@@ -130,12 +174,12 @@ body {
 	padding: 0;
 }
 
-@include sm() {
+@include md() {
 	.menu-toggle {
 		display: none;
 	}
 	.main-navigation ul {
-		display: block;
+		display: flex;
 	}
 }
 
