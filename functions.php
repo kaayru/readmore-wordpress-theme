@@ -58,6 +58,15 @@ function readmore_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	add_theme_support( 'post-formats', array( 
+		'video', 
+		'link', 
+		'quote',
+		'gallery',
+		'image',
+		'audio'
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'readmore_setup' );
