@@ -27,3 +27,17 @@ function readmore_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'readmore_body_classes' );
+
+function display_sidebar($position = null) 
+{
+	if($position === 'left') {
+		return get_theme_mod('readmore_general_layout', 1) == '1';	
+	}
+
+	if($position === 'right') {
+		return get_theme_mod('readmore_general_layout', 1) == '2';	
+	}
+	
+	return get_theme_mod('readmore_general_layout', 1) !== '3';	
+	
+}

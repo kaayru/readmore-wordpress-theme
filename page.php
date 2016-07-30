@@ -34,5 +34,8 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if(display_sidebar()) {
+	get_sidebar();
+}
+
 get_footer();
