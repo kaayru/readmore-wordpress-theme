@@ -52,12 +52,18 @@
   	// Layout
   	wp.customize('readmore_general_layout', function(value) {
     	value.bind(function(to) {
-    		var sidebar = $('#secondary');
+    		var body = document.getElementsByTagName('body')[0]
+
+    		body.classList.remove('no-sidebar');
+    		body.classList.remove('sidebar-right'); 
+    		body.classList.remove('sidebar-left');
 
     		if(to === '3') {
-    			sidebar.hide();
-    		} else {
-    			sidebar.show();
+    			body.classList.add('no-sidebar');
+    		} else if(to === '2') {
+    			body.classList.add('sidebar-right');
+    		} else if(to === '1') {
+    			body.classList.add('sidebar-left');
     		}
     	});
   	});

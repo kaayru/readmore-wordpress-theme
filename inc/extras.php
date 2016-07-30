@@ -28,16 +28,20 @@ function readmore_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'readmore_body_classes' );
 
-function display_sidebar($position = null) 
+function readmore_sidebar_body_class() 
 {
-	if($position === 'left') {
-		return get_theme_mod('readmore_general_layout', 1) == '1';	
+	$display_mode = get_theme_mod('readmore_general_layout', 1);
+	
+	if ( $display_mode === '1' ) {
+		$classes[] = 'sidebar-left';
+	}
+	if ( $display_mode === '2' ) {
+		$classes[] = 'sidebar-right';
+	}
+	if ( $display_mode === '3' ) {
+		$classes[] = 'no-sidebar';
 	}
 
-	if($position === 'right') {
-		return get_theme_mod('readmore_general_layout', 1) == '2';	
-	}
-	
-	return get_theme_mod('readmore_general_layout', 1) !== '3';	
-	
+	return $classes;
 }
+add_filter( 'body_class', 'readmore_sidebar_body_class' );

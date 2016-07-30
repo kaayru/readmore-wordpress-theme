@@ -53,7 +53,5 @@ get_header(); ?>
 
 <?php
 
-if(display_sidebar()) {
-	get_sidebar();
-}
+get_sidebar();
 get_footer();

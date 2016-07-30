@@ -99,6 +99,8 @@ button {
 h1, h2, h3, h4, h5, h6 {
 	font-family: $font__heading;
 	clear: both;
+	padding-top: $spacing__gutter;
+	margin-top: 0;
 }
 h1 {
 	@include font-size-site-title();
@@ -113,15 +115,35 @@ h3, h4, h5, h6 {
 //== Grid System
 #content,
 .site-header,
-.site-footer {
+.site-footer .site-info {
 	@extend .container;
 }
-#primary {
-	@extend .col-sm-7;
-	@extend .col-md-8;
+.sidebar-right,
+.sidebar-left {
+	#primary {
+		@extend .col-sm-7;
+		@extend .col-md-8;
+	}
+	#secondary {
+		@extend .col-sm-5;
+		@extend .col-md-4;
+		@extend .col-lg-3;
+	}
 }
-#secondary {
-	@extend .col-sm-5;
-	@extend .col-md-4;
-	@extend .col-lg-3;
+
+.sidebar-left {
+	@include sm() {
+		#primary {
+			float: right;
+		}
+	}
+}
+
+.no-sidebar {
+	#primary {
+		@extend .col-sm-12;
+	}
+	#secondary {
+		display: none;
+	}
 }
