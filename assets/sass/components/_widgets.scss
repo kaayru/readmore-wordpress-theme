@@ -1,5 +1,6 @@
 .widget {
 	margin: 0 0 $spacing__paragraph;
+	background-color: $color__foreground;
 
 	/* Make sure select elements fit in widgets. */
 	select {
