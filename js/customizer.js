@@ -48,4 +48,17 @@
     		$('link#readmore-color-theme-css').attr('href',stylesheet_url.replace(/(theme[0-9]+\.css)/, 'theme' + to + '.css'));
     	});
   	});
+
+  	// Layout
+  	wp.customize('readmore_general_layout', function(value) {
+    	value.bind(function(to) {
+    		var sidebar = $('#secondary');
+
+    		if(to === '3') {
+    			sidebar.hide();
+    		} else {
+    			sidebar.show();
+    		}
+    	});
+  	});
 } )( jQuery );
