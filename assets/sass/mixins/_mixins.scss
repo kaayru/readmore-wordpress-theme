@@ -23,11 +23,18 @@
 @mixin font-size-headings() {
 	@include font-size($fontsize__headings);
 }
+@mixin font-size-menu() {
+	@include font-size($fontsize__menu);
+}
 
 // Reset all styles on lists
 @mixin reset-list() {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+}
+
+// Hack to enable material acceleration
+@mixin enhance-cpu() {
+	transform: translate3d(0,0,0);
 }

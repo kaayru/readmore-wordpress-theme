@@ -5,7 +5,7 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var container, button, menu, links, subMenus, i, len;
+	var container, button, menu, links, subMenus, i, len, body;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -14,6 +14,11 @@
 
 	button = container.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
+		return;
+	}
+
+	body = document.getElementsByTagName( 'body' )[0];
+	if ( ! body ) {
 		return;
 	}
 
@@ -26,17 +31,19 @@
 	}
 
 	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
+	if ( !menu.classList.contains( 'nav-menu' ) ) {
+		menu.classList.add( 'nav-menu' );
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+		if ( container.classList.contains( 'toggled' ) ) {
+			container.classList.remove('toggled');
+			body.classList.remove('menu-toggled');
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			container.className += ' toggled';
+			container.classList.add('toggled');
+			body.classList.add('menu-toggled');
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
@@ -64,14 +71,14 @@
 		var self = this;
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		while ( !self.classList.contains( 'nav-menu' ) ) {
 
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
+				if ( self.classList.contains( 'focus' ) ) {
+					self.classList.remove( 'focus' );
 				} else {
-					self.className += ' focus';
+					self.classList.add( 'focus' );
 				}
 			}
 
