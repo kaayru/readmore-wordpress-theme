@@ -12,3 +12,19 @@ a {
 		color: darken($accent-color, 10);
 	}
 }
+
+//== Grid System
+#content,
+.site-header,
+.site-footer {
+	@extend .container;
+}
+#primary {
+	@extend .col-sm-7;
+	@extend .col-md-8;
+}
+#secondary {
+	@extend .col-sm-5;
+	@extend .col-md-4;
+	@extend .col-lg-3;
+}
