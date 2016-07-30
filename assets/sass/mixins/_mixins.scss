@@ -1,0 +1,33 @@
+@import "media_queries";
+
+// Transition effect on text color
+@mixin color-transition() {
+	transition: color 0.2s ease;
+}
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+@mixin font-size-paragraph() {
+	@include font-size($fontsize__paragraph);
+}
+@mixin font-size-site-title() {
+	@include font-size($fontsize__site-title);
+}
+@mixin font-size-post-title() {
+	@include font-size($fontsize__post-title);
+}
+@mixin font-size-headings() {
+	@include font-size($fontsize__headings);
+}
+
+// Reset all styles on lists
+@mixin reset-list() {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}

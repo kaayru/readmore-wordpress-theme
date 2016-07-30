@@ -1,0 +1,28 @@
+//== Colors
+$color__primary: readmore-color('primary');
+$color__secondary: readmore-color('secondary');
+$color__accent: readmore-color('accent');
+$color__foreground: readmore-color('foreground');
+$color__background: readmore-color('background');
+$color__text: #475055;
+
+$color__background-hr: #ccc;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+//== Font
+$font__main: 'Roboto', Helvetica;
+$font__heading: 'BioRhyme', Helvetica;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", Courier, monospace;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+$fontsize__paragraph: 1;
+$fontsize__code: 0.9;
+$fontsize__site-title: 2;
+$fontsize__post-title: 1.5;
+$fontsize__headings: 1;
+
+//== Spacing
+$spacing__paragraph: 1.5em;
+$spacing__gutter: $grid-gutter-width;

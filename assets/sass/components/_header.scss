@@ -1,0 +1,21 @@
+.site-header {
+	position: relative;
+}
+
+.site-branding {
+	padding-top: $spacing__gutter;
+	padding-bottom: $spacing__gutter;
+
+	h1 a,
+	p a,
+	.site-description {
+		color: $color__foreground;
+	}
+
+	h1 a,
+	p a {
+		&:hover {
+			color: $color__accent;
+		}
+	}
+}

@@ -56,18 +56,11 @@
 
 //Gutters
 @mixin gutters() {
+    margin-right: 0;
+    margin-left: 0;
+    
     @include sm() {
-        margin-right: $site-margin-sm;
-        margin-left: $site-margin-sm;
-    };
-
-    @include md() {
-        margin-right: $site-margin-md;
-        margin-left: $site-margin-md;
-    };
-
-    @include lg() {
-        margin-right: $site-margin-lg;
-        margin-left: $site-margin-lg;
-    };
+        margin-right: $grid-gutter-width;
+        margin-left: $grid-gutter-width;
+    }
 }

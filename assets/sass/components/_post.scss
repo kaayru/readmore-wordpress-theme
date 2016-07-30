@@ -1,0 +1,28 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 $spacing__paragraph;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: $spacing__paragraph 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 $spacing__paragraph;
+}
