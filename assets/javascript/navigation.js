@@ -96,9 +96,9 @@
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
 				var menuItem = this.parentNode, i;
-
+				e.preventDefault();
+				
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
-					e.preventDefault();
 					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
 						if ( menuItem === menuItem.parentNode.children[i] ) {
 							continue;
