@@ -39,12 +39,6 @@
 					<?php } ?>
 	            <?php } ?>
 	        </div>
-
-			<?php $description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php
-			endif; ?>
 		</div>
 		
 		<nav id="site-navigation" class="main-navigation" role="navigation">
