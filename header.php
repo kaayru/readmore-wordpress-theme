@@ -22,21 +22,27 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'readmore' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+			<?php $logo = get_theme_mod('readmore_header_logo', null); ?>
+	        <div class="site-title">
+	        	<?php if($logo) { ?>
+	            	<a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_html(bloginfo('name')); ?>" rel="home">
+	                    <img src="<?php echo esc_url( $logo ); ?>" alt="<?php esc_html( bloginfo('name') ); ?>"/>
+	            	</a>
+	            <?php } else { ?>
+	            	<?php if ( is_front_page() && is_home() ) { ?>
+						<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php } else { ?>
+						<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php } ?>
+	            <?php } ?>
+	        </div>
 
-			$description = get_bloginfo( 'description', 'display' );
+			<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $description; ?></p>
 			<?php
 			endif; ?>
 		</div><!-- .site-branding -->
