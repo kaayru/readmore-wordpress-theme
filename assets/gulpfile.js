@@ -12,7 +12,6 @@ const gulpIf = require('gulp-if');
 const autoprefixer = require('gulp-autoprefixer');
 const args = require('get-gulp-args')();
 const fs = require('fs');
-const spritesmith = require('gulp.spritesmith');
 
 //Set the env to "dev" by default, you can use any another value to remove sourcemaps (gulp --env=prod)
 const isDev = (args.env || 'dev') === 'dev';
@@ -26,25 +25,6 @@ function onError(error) {
  * DEFAULT
  */
 gulp.task('default', ['versionning', 'lib', 'sass', 'js', 'watch']);
-
-/**
- * SPRITE
- */
-gulp.task('sprite', function () {
-    var spriteData = gulp.src('images/*.png')
-        .pipe(spritesmith({
-            imgName: 'sprite.png',
-            imgPath: '../img/sprite.png',
-            cssName: 'sprite.scss',
-            cssTemplate: 'sprite.mustache'
-        }));
-
-    var imgStream = spriteData.img
-        .pipe(gulp.dest('../img'));
-
-    return cssStream = spriteData.css
-        .pipe(gulp.dest('sass/'));
-});
 
 /**
  * VERSIONNING
