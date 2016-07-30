@@ -1,3 +1,5 @@
+$toggle_size: 50px;
+
 body {
 	.site {
 		transition: transform 0.3s ease;
@@ -6,7 +8,11 @@ body {
 
 	&.menu-toggled {
 		.site {
-			transform: translateX(calc((100% - 70px) * -1));
+			transform: translateX(calc((100% - #{$toggle_size+$spacing__gutter}) * -1));
+
+			@include sm() {
+				transform: translateX(calc((100% - #{($toggle_size+$spacing__gutter*4)}) * -1));
+			}
 		}
 		overflow: hidden;
 	}
@@ -15,12 +21,15 @@ body {
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	position: absolute;
     top: $spacing__gutter/2;
     right: $spacing__gutter/2;
     width: auto;
 
+    @include sm() {
+    	top: $spacing__gutter;
+    	right: $spacing__gutter;
+    }
     .menu {
     	position: fixed;
     	top: 0;
@@ -113,7 +122,12 @@ body {
 	background-color: $color__primary;
 	color: $color__foreground;
 	@include font-size(2);
-	padding: 10px 16px;
+	width: $toggle_size;
+	height: $toggle_size;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
 }
 
 @include sm() {
