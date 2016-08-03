@@ -6,10 +6,15 @@
  *
  * @package ReadMore
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if( has_post_thumbnail() ) : ?>
+		<aside class="hentry-thumbnail" style="background-image: url(<?php echo the_post_thumbnail_url(); ?>)">
+		</aside>
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -28,16 +33,20 @@
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'readmore' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			if ( is_single() ) :
+				the_content( sprintf(
+					/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'readmore' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'readmore' ),
-				'after'  => '</div>',
-			) );
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'readmore' ),
+					'after'  => '</div>',
+				) );
+			else :
+				the_excerpt();
+			endif;
 		?>
 	</div><!-- .entry-content -->
 
