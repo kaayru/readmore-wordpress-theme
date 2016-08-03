@@ -1,6 +1,7 @@
 $toggle_size: 50px;
 
 body {
+	// Prepare the .site div to slide
 	.site {
 		transition: transform 0.3s ease;
 		@include enhance-cpu();
@@ -8,12 +9,14 @@ body {
 
 	&.menu-toggled {
 		.site {
+			// Slide the entire layout to reveal menu
 			transform: translateX(calc((100% - #{$toggle_size+$spacing__gutter}) * -1));
 
 			@include sm() {
 				transform: translateX(calc((100% - #{($toggle_size+$spacing__gutter*4)}) * -1));
 			}
 			@include md() {
+				// No sliding on desktop
 				transform: none;
 			}
 		}
@@ -38,6 +41,7 @@ body {
     	position: static;
     }
 
+	// Main UL element
     .menu {
     	position: fixed;
     	top: 0;
@@ -54,39 +58,39 @@ body {
 		}
     }
 
+	// All menus
 	ul {
 		@include reset-list();
 
+		// ul ul
 		ul {
 			display: none;
 
+			// ul ul > li
 			li {
+				// ul ul > li
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
 				}
 			}
 
+			// ul ul a
 			a {
 				width: 200px;
 			}
 
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-
+			// ul ul
 			@include md() {
 				position: absolute;
 			    background: $color__foreground;
-			    top: 50px;
+			    top: 54px;
 			    left: 0;
 			    overflow: visible;
 			    z-index: 1;
+			    box-shadow: 1px 1px 2px darken($color__grey-light, 20);
 
+				// ul ul ul
 				ul {
 					right: -100%;
 					left: 100%;
@@ -97,35 +101,37 @@ body {
 			}
 		}
 
+		// ul li > ul
 		li:hover > ul,
 		li.focus > ul {
 			display: block;
 		}
-
-		@include md() {
-			display: flex;
-			justify-content: space-around;
-		}
 	}
 
+	// All li
 	li {
 		position: relative;
 		padding: $spacing__gutter 20px;
 		border-bottom: 1px solid $color__grey-light;
 
+		// li > a
 		&:hover > a,
 		&.focus > a {
 			color: $color__accent;
 		}
 
+		// li.menu-item-has-children
 		&.menu-item-has-children {
+
+			// li.menu-item-has-children > a
 			& > a:after {
-				@extend .fa-angle-down:before;
+				@extend .fa-plus-circle:before;
 				@extend .fa;
 				margin-left: 10px;
 			}
 		}
 
+		// li li
 		li {
 			border-top: 1px solid $color__grey-light;
 			border-bottom: none;
@@ -134,6 +140,7 @@ body {
 		}
 
 		@include md() {
+			// li, li li
 			&, li {
 				border: none;
 				margin-top: 0;
@@ -142,6 +149,7 @@ body {
 		}
 	}
 
+	// All links
 	a {
 		display: block;
 		text-decoration: none;
