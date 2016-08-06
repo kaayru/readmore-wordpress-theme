@@ -25,11 +25,13 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php readmore_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+			<div class="entry-meta">
+				<?php readmore_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+
+		<div class="post-format-icon">
+		</div>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

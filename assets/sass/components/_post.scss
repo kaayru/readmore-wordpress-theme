@@ -1,11 +1,12 @@
 article.post {
+	$post_format_icon_size: 40px;
+
 	&.hentry {
 		margin: 0 0 $spacing__paragraph;
 		padding: 0 0 $spacing__paragraph;
 		background-color: $color__foreground;
 		position: relative;
 		z-index: 0;
-		text-shadow: 1px 1px 1px #FFF;
 	}
 
 	.entry-header,
@@ -13,6 +14,7 @@ article.post {
 	.entry-footer {
 		padding-left: 60px;
 		padding-right: $spacing__paragraph;
+		position: relative;
 	}
 
 	.page-content,
@@ -44,6 +46,65 @@ article.post {
 		display: inline-block;
 		margin-right: 5px;
 		width: 15px;
+	}
+
+	.post-format-icon {
+		position: absolute;
+		top: $spacing__gutter;
+		left: 0;
+		width: $post_format_icon_size;
+		height: $post_format_icon_size;
+		background-color: $color__primary;
+		color: #FFFFFF;
+		text-align: center;
+		vertical-align: baseline;
+		line-height: 2.8;
+
+		&:before {
+			@extend .fa;
+		}
+	}
+
+	&.format-standard {
+		.post-format-icon:before {
+			@extend .fa-pencil:before;
+		}
+	}
+
+	&.format-link {
+		.post-format-icon:before {
+			@extend .fa-link:before;
+		}
+	}
+
+	&.format-video {
+		.post-format-icon:before {
+			@extend .fa-play:before;
+		}
+	}
+
+	&.format-image {
+		.post-format-icon:before {
+			@extend .fa-camera:before;
+		}
+	}
+
+	&.format-audio {
+		.post-format-icon:before {
+			@extend .fa-microphone:before;
+		}
+	}
+
+	&.format-gallery {
+		.post-format-icon:before {
+			@extend .fa-picture-o:before;
+		}
+	}
+
+	&.format-quote {
+		.post-format-icon:before {
+			@extend .fa-quote-left:before;
+		}
 	}
 
 	// Featured thumbnail
