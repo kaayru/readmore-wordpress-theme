@@ -48,4 +48,27 @@ function readmore_sidebar_body_class()
 
 	return $classes;
 }
+
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function readmore_custom_excerpt_length( $length ) {
+    return 40;
+}
+add_filter( 'excerpt_length', 'readmore_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function readmore_excerpt_more( $more ) {
+    return '&hellip;';
+}
+add_filter( 'excerpt_more', 'readmore_excerpt_more' );
 add_filter( 'body_class', 'readmore_sidebar_body_class' );
