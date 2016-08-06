@@ -68,7 +68,7 @@ add_filter( 'excerpt_length', 'readmore_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function readmore_excerpt_more( $more ) {
-    return '&hellip;';
+    return sprintf('... <a class="readmore" href="%s" title="%s">%s</a>', get_the_permalink(), get_the_title(), __('Read more', 'readmore'));
 }
 add_filter( 'excerpt_more', 'readmore_excerpt_more' );
 add_filter( 'body_class', 'readmore_sidebar_body_class' );
