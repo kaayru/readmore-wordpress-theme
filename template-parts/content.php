@@ -11,8 +11,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if( has_post_thumbnail() ) : ?>
-		<aside class="hentry-thumbnail" style="background-image: url(<?php echo the_post_thumbnail_url(); ?>)">
-		</aside>
+		<div class="hentry-thumbnail">
+			<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+		</div>
 	<?php endif; ?>
 
 	<header class="entry-header">

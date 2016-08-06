@@ -1,6 +1,7 @@
 article.post {
 	&.hentry {
 		margin: 0 0 $spacing__paragraph;
+		padding: 0 0 $spacing__paragraph;
 		background-color: $color__foreground;
 		position: relative;
 		z-index: 0;
@@ -11,16 +12,7 @@ article.post {
 	.entry-content,
 	.entry-footer {
 		padding-left: 60px;
-	}
-
-	.byline,
-	.updated:not(.published){
-		display: none;
-	}
-
-	&.single .byline,
-	&.group-blog .byline {
-		display: inline;
+		padding-right: $spacing__paragraph;
 	}
 
 	.page-content,
@@ -40,28 +32,37 @@ article.post {
 		color: $color__text;
 	}
 
+	.updated:not(.published){
+		display: none;
+	}
+
+	.byline {
+		display: block;
+	}
+
+	.entry-header i {
+		display: inline-block;
+		margin-right: 5px;
+		width: 15px;
+	}
+
 	// Featured thumbnail
 	.hentry-thumbnail {
-		position: absolute;
-		z-index: -1;
-		height: 100%;
-		width: 100%;
 
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-
-		&:after {
-			content: ' ';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(255, 255, 255, 0.8);
-		}
 	}
-	
+
+	// Hentry Footer
+	.cat-links,
+	.tags-links,
+	.edit-link {
+		display: none;
+	}
+
+	&.single .cat-links,
+	&.single .tags-links,
+	&.single .edit-link {
+		display: inline;
+	}
 
 	// Images alignment
 	.alignleft {
@@ -77,5 +78,10 @@ article.post {
 	.aligncenter {
 		clear: both;
 		@include center-block;
+	}
+
+	// Hentry content
+	.readmore {
+		color: $color__accent;
 	}
 }
