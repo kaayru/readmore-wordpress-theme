@@ -1,0 +1,18 @@
+// Link
+article.post.format-link {
+	margin-bottom: 0;
+	margin-top: -$spacing__gutter;
+
+	.entry-content {
+		background-color: $color__background;
+		color: $color__foreground;
+
+		a {
+			color: $color__accent;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
