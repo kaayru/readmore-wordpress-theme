@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="hentry-thumbnail video-container">
+	<div class="video-container">
 		<?php echo readmore_get_first_embed(get_the_ID()); ?>
 	</div>
 

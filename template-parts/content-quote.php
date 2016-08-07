@@ -10,14 +10,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if( false && has_post_thumbnail() ) : ?>
-		<div class="hentry-thumbnail">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
-			</a>
-		</div>
-	<?php endif; ?>
-
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :

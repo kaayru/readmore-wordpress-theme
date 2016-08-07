@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="hentry-thumbnail">
+	<div class="gallery">
 		<?php readmore_flexslider($post); ?>
 	</div>
 
