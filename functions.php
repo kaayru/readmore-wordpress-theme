@@ -42,6 +42,7 @@ function readmore_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1860, 900 );
+	add_image_size( 'post-image', 1860, 900 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
