@@ -2,12 +2,11 @@ article.post {
 	$post_format_icon_size: 40px;
 
 	&.hentry {
-		margin: 0;
+		margin: 0 0 5px;
 		padding: 0;
 		background-color: $color__foreground;
 		position: relative;
 		z-index: 0;
-		border-bottom: 1px solid $color__grey-light;
 	}
 
 	.entry-header,

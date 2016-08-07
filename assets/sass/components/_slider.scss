@@ -1,0 +1,227 @@
+html[xmlns] .slides { display: block; } 
+* html .slides { height: 1%; }
+.no-js .slides > li:first-child { display: block; }
+
+.flexslider { 
+	margin: 0; 
+	padding: 0; 
+	background: #F1F1F1; 
+	position: relative; 
+	zoom: 1;
+
+	.slides {
+		zoom: 1;
+		padding-left: 0;
+
+		& > li { 
+			display: none; 
+			-webkit-backface-visibility: hidden; 
+			position: relative; 
+
+			img { 
+				width: 100%; 
+				display: block; 
+			}
+		}
+
+		&:after {
+			content: "."; 
+			display: block; 
+			clear: both; 
+			visibility: hidden; 
+			line-height: 0; 
+			height: 0; 
+		} 
+	}
+
+	.flex-pauseplay span { 
+		text-transform: capitalize; 
+	}
+
+	.single & { 
+		min-height: 100px; 
+	}
+
+
+	.flex-viewport { max-height: 2000px; }
+	.carousel li { margin-right: 5px; }
+	.loading .flex-viewport { max-height: 300px; }
+
+	.flex-direction-nav { 
+		*height: 0; 
+		z-index: 100; 
+		position: absolute; 
+		top:10px; 
+		right: 10px;
+
+		li { 
+			display: inline-block; 
+		}
+
+		a { 
+			padding: 11px; 
+			line-height: 1; 
+			background: #FFF; 
+			display: block; 
+			opacity: 1; 
+			box-sizing: border-box; 
+			font-size: 12px; 
+			text-transform: uppercase; 
+			font-weight: 600; 
+			color: #999; 
+
+			@include sm {
+				opacity: 0;
+			}
+		}
+
+		.flex-next { 
+			background-position: 100% 0; 
+			border-radius: 0 3px 3px 0; 
+		}
+
+		.flex-prev { 
+			border-radius: 3px 0 0 3px; 
+			border-right: 1px solid #DDD; 
+		}
+
+		.flex-disabled { 
+			opacity: 0.3 !important; 
+			cursor: default; 
+		}
+
+		@include sm {
+			right: 20px; 
+			top: 20px; 
+		}
+	}
+
+	&:hover {
+		a { 
+			opacity: 1; 
+		}
+
+		.flex-next:hover, .flex-prev:hover { 
+			background-color: #f1f1f1; 
+			color: #666; 
+		}
+
+		.flex-next:active, .flex-prev:active { 
+			color: #FF6558; 
+		}
+	}
+
+	.flex-control-nav { 
+		width: 100%; 
+		position: absolute; 
+		bottom: -40px; 
+		text-align: center; 
+
+		li {
+			margin: 0 6px; 
+			display: inline-block; 
+			zoom: 1; 
+			*display: inline; 
+		}
+	}
+
+	.flex-control-paging {
+		li a { 
+			width: 11px; 
+			height: 11px; 
+			display: block; 
+			background: #666; 
+			background: rgba(0,0,0,0.5); 
+			cursor: pointer; 
+			text-indent: -9999px; 
+			border-radius: 20px; 
+			box-shadow: inset 0 0 3px rgba(0,0,0,0.3); 
+
+			&:hover { 
+				background: #333; 
+				background: rgba(0,0,0,0.7); 
+			}
+
+			&.flex-active { 
+				background: #000; 
+				background: rgba(0,0,0,0.9); 
+				cursor: default; 
+			}
+		}
+	}
+
+	.flex-control-thumbs { 
+		margin: 5px 0 0; 
+		position: static; 
+		overflow: hidden;
+
+		li { 
+			width: 25%; 
+			float: left; 
+			margin: 0; 
+		} 
+
+		img { 
+			width: 100%; 
+			display: block; 
+			opacity: 0.7; 
+			cursor: pointer; 
+		}
+
+		img:hover { 
+			opacity: 1; 
+		}
+
+		.flex-active { 
+			opacity: 1; 
+			cursor: default; 
+		}
+	}
+
+	.media-caption-container {
+		position: relative; 
+		width: 100%; 
+		margin: 0; 
+		bottom: auto; 
+		font-size: 0.925em;
+		text-align: center; 
+
+		@include md {
+			position: absolute; 
+			width: 95%; 
+			margin-left: 2.5%; 
+			bottom: 1.5em; 
+			font-size: 0.85em; 
+		}
+	}
+
+	.media-caption { 
+		text-align: center; 
+		line-height: 130%;
+		display: block; 
+		padding: 10px 13px; 
+		background: #EEE; 
+		color: #999; 
+		border-radius: 0; 
+
+		&:hover { 
+			background: #EEE; 
+			color: #999;
+
+			@include md {
+				background: #222; 
+				background: rgba(0,0,0, .75); 
+				color: #FFF; 
+			}
+		}
+
+		@include md {
+			display: inline-block; 
+			padding: 7px 11px; 
+			border-radius: 3px; 
+			background: #222; 
+			background: rgba(0,0,0, .5); 
+			color: #FFF; 
+		}
+	}
+}

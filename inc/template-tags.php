@@ -118,3 +118,51 @@ function readmore_category_transient_flusher() {
 }
 add_action( 'edit_category', 'readmore_category_transient_flusher' );
 add_action( 'save_post',     'readmore_category_transient_flusher' );
+
+/**
+ * Outputs a slider for post attachments
+ * @param  WP_Post $post
+ * @param  string $size 
+ */
+function readmore_flexslider() {
+
+	if ( is_page()) :
+		$attachment_parent = $post->ID;
+	else : 
+		$attachment_parent = get_the_ID();
+	endif;
+
+	if($images = get_posts(array(
+		'post_parent'    => $attachment_parent,
+		'post_type'      => 'attachment',
+		'numberposts'    => -1, // show all
+		'post_status'    => null,
+		'post_mime_type' => 'image',
+                'orderby'        => 'menu_order',
+                'order'           => 'ASC',
+	))) { ?>
+	
+		<div class="flexslider">
+		
+			<ul class="slides">
+	
+				<?php foreach($images as $image) { 
+					$attimg = wp_get_attachment_image($image->ID,'post-image'); ?>
+					
+					<li>
+						<?php echo $attimg; ?>
+						<?php if ( !empty($image->post_excerpt)) : ?>
+							<div class="media-caption-container">
+								<p class="media-caption"><?php echo $image->post_excerpt ?></p>
+							</div>
+						<?php endif; ?>
+					</li>
+					
+				<?php }; ?>
+		
+			</ul>
+			
+		</div><?php
+		
+	}
+}
