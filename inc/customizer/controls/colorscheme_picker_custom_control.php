@@ -22,29 +22,29 @@ if (class_exists('WP_Customize_Control'))
             <div class="layout-customizer-control">
                 <label>
                     <input type="radio" value="1" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme1"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme1.jpg'); ?>" alt="<?php _et('Scheme 1'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme1.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 1', 'readmore'); ?>" />
                 </label>
                 <label>
                     <input type="radio" value="2" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme2"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme2.jpg'); ?>" alt="<?php _et('Scheme 2'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme2.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 2', 'readmore'); ?>" />
                 </label>
                 <label>
                     <input type="radio" value="3" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme3"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme3.jpg'); ?>" alt="<?php _et('Scheme 3'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme3.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 3', 'readmore'); ?>" />
                 </label>
             </div>
             <div class="layout-customizer-control">
                 <label>
                     <input type="radio" value="4" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme4"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme4.jpg'); ?>" alt="<?php _et('Scheme 4'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme4.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 4', 'readmore'); ?>" />
                 </label>
                 <label>
                     <input type="radio" value="5" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme5"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme5.jpg'); ?>" alt="<?php _et('Scheme 5'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme5.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 5', 'readmore'); ?>" />
                 </label>
                 <label>
                     <input type="radio" value="6" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme6"); ?> />
-                    <img src="<?php echo $imageDirectory; ?><?php _et('scheme6.jpg'); ?>" alt="<?php _et('Scheme 6'); ?>" />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme6.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 6', 'readmore'); ?>" />
                 </label>
             </div>
         <?php }

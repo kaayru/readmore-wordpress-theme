@@ -138,16 +138,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Translate custom functions
- */
-function _t($text)
-{
-    return __($text, 'readmore');
-}
-
-function _et($text)
-{
-    echo _e($text, 'readmore');
-}

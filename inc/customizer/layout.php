@@ -5,7 +5,7 @@ require_once get_template_directory() . '/inc/customizer/controls/layout_picker_
 function readmore_customizer_layouts($wp_customize) {
 
     $wp_customize->add_section( 'readmore_layouts', array(
-        'title' => _t('Layouts'),
+        'title' => __('Layouts', 'readmore'),
         'priority' => 20
     ) ); 
 
@@ -15,10 +15,10 @@ function readmore_customizer_layouts($wp_customize) {
     ));
     $wp_customize->add_control(new \Layout_Picker_Custom_control(
         $wp_customize, 'readmore_general_layout', array(
-            'label'       => _t( 'General Layout' ),
+            'label'       => __( 'General Layout', 'readmore' ),
             'section'     => 'readmore_layouts',
             'settings'    => 'readmore_general_layout',
-            'description' => _t( 'Pick a layout for the general layout of the website' ),
+            'description' => __( 'Pick a layout for the general layout of the website', 'readmore' ),
         )
     ) );
 }

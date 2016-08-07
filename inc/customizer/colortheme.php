@@ -5,7 +5,7 @@ require_once get_template_directory() . '/inc/customizer/controls/colorscheme_pi
 function readmore_customizer_colortheme($wp_customize) {
 
     $wp_customize->add_section( 'readmore_color_theme', array(
-        'title' => _t('Color Theme'),
+        'title' => __('Color Theme', 'readmore'),
         'priority' => 20
     ) ); 
 
@@ -15,10 +15,10 @@ function readmore_customizer_colortheme($wp_customize) {
     ));
     $wp_customize->add_control(new \Color_Scheme_Picker_Custom_control(
         $wp_customize, 'readmore_color_scheme', array(
-            'label'       => _t( 'Main Color Theme' ),
+            'label'       => __( 'Main Color Theme', 'readmore' ),
             'section'     => 'readmore_color_theme',
             'settings'    => 'readmore_color_scheme',
-            'description' => _t( 'Pick a color scheme' ),
+            'description' => __( 'Pick a color scheme', 'readmore' ),
         )
     ) );
 }

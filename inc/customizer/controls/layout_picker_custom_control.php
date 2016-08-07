@@ -22,18 +22,18 @@ if (class_exists('WP_Customize_Control'))
             <div class="layout-customizer-control">
                 <label>
                     <input type="radio" value="1" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "left_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>left_sidebar.png" alt="<?php _et('Left Sidebar'); ?>" />
-                    <span><?php _et('Left Sidebar'); ?></span>
+                    <img src="<?php echo $imageDirectory; ?>left_sidebar.png" alt="<?php _e('Left Sidebar', 'readmore'); ?>" />
+                    <span><?php _e('Left Sidebar', 'readmore'); ?></span>
                 </label>
                 <label>
                     <input type="radio" value="2" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "right_sidebar"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>right_sidebar.png" alt="<?php _et('Full Width'); ?>" />
-                    <span><?php _et('Right Sidebar'); ?></span>
+                    <img src="<?php echo $imageDirectory; ?>right_sidebar.png" alt="<?php _e('Full Width', 'readmore'); ?>" />
+                    <span><?php _e('Right Sidebar', 'readmore'); ?></span>
                 </label>
                 <label>
                     <input type="radio" value="3" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "full_width"); ?> />
-                    <img src="<?php echo $imageDirectory; ?>full_width.png" alt="<?php _et('Full Width'); ?>" />
-                    <span><?php _et('Full Width'); ?></span>
+                    <img src="<?php echo $imageDirectory; ?>full_width.png" alt="<?php _e('Full Width', 'readmore'); ?>" />
+                    <span><?php _e('Full Width', 'readmore'); ?></span>
                 </label>
             </div>
         <?php }
