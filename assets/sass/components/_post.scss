@@ -13,7 +13,7 @@ article.post {
 	.entry-header,
 	.entry-content,
 	.entry-footer {
-		padding-left: 60px;
+		padding-left: $spacing__paragraph;
 		padding-right: $spacing__paragraph;
 		position: relative;
 	}
@@ -54,6 +54,7 @@ article.post {
 	}
 
 	.post-format-icon {
+		display: none;
 		position: absolute;
 		top: 24px;
 		left: 0;
