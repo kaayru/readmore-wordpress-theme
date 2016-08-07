@@ -32,8 +32,7 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
-		<div class="post-format-icon">
-		</div>
+		<a href="<?php the_permalink(); ?>" class="post-format-icon"></a>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

@@ -12,15 +12,19 @@ article.post {
 	.entry-header,
 	.entry-content,
 	.entry-footer {
-		padding-left: $spacing__paragraph;
-		padding-right: $spacing__paragraph;
+		padding-left: 60px;
+		padding-right: $spacing__gutter;
 		position: relative;
+
+		.single & {
+			padding-left: $spacing__gutter;
+		}
 	}
 
 	.page-content,
 	.entry-content,
 	.entry-summary {
-		padding-top: $spacing__paragraph;
+		padding-top: $spacing__gutter;
 	}
 
 	.page-links {
@@ -65,11 +69,26 @@ article.post {
 		vertical-align: baseline;
 		line-height: 2.8;
 		z-index: 2;
+		@include standard-transition(background);
 
 		&:before {
 			@extend .fa;
 		}
+
+		&:hover {
+			background: $color__accent;
+		}
+
+		@include sm {
+			display: block;
+		}
+
+		.single & {
+			display: none;
+		}
 	}
+
+	
 
 	&.format-standard {
 		.post-format-icon:before {
