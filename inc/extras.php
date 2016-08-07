@@ -13,7 +13,8 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function readmore_body_classes( $classes ) {
+function readmore_body_classes( $classes ) 
+{
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -56,7 +57,8 @@ function readmore_sidebar_body_class()
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function readmore_custom_excerpt_length( $length ) {
+function readmore_custom_excerpt_length( $length ) 
+{
     return 40;
 }
 add_filter( 'excerpt_length', 'readmore_custom_excerpt_length', 999 );
@@ -67,8 +69,34 @@ add_filter( 'excerpt_length', 'readmore_custom_excerpt_length', 999 );
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-function readmore_excerpt_more( $more ) {
+function readmore_excerpt_more( $more ) 
+{
     return sprintf('... <a class="readmore" href="%s" title="%s">%s</a>', get_the_permalink(), get_the_title(), __('Read more', 'readmore'));
 }
 add_filter( 'excerpt_more', 'readmore_excerpt_more' );
 add_filter( 'body_class', 'readmore_sidebar_body_class' );
+
+/**
+ * Returns the first embeded content in a post
+ * @param  int $postId 
+ * @return string
+ */
+function readmore_get_first_embed( $postId )
+{
+	$post = get_post($postId);
+    $content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+    $embeds = get_media_embedded_in_content( $content );
+    
+    if($embeds) {
+    	return $embeds[0];
+    }
+}
+
+/**
+ * Wraps embeded contents
+ */
+function readmore_oembed_filter($html, $url, $attr, $post_ID) {
+    $return = '<div class="video-container">'.$html.'</div>';
+    return $return;
+}
+add_filter( 'embed_oembed_html', 'readmore_oembed_filter', 10, 4 ) ;
