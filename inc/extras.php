@@ -81,9 +81,8 @@ add_filter( 'body_class', 'readmore_sidebar_body_class' );
  * @param  int $postId 
  * @return string
  */
-function readmore_get_first_embed( $postId )
+function readmore_get_first_embed( $post )
 {
-	$post = get_post( $postId );
     $content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
     $embeds = get_media_embedded_in_content( $content );
     
@@ -92,11 +91,19 @@ function readmore_get_first_embed( $postId )
     }
 }
 
+function readmore_the_content_without_first_embed( $post )
+{
+	$firstEmbed = readmore_get_first_embed($post);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+
+	echo str_replace('<div class="video-container">' . $firstEmbed . '</div>', '', $content);
+}
+
 /**
  * Wraps embeded contents
  */
 function readmore_oembed_filter($html, $url, $attr, $post_ID) {
-    $return = '<div class="video-container">'.$html.'</div>';
+    $return = '<div class="video-container">' . $html . '</div>';
     return $return;
 }
 add_filter( 'embed_oembed_html', 'readmore_oembed_filter', 10, 4 ) ;

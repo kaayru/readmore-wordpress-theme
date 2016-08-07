@@ -12,9 +12,13 @@ article.post {
 	.entry-header,
 	.entry-content,
 	.entry-footer {
-		padding-left: 60px;
+		padding-left: $spacing__gutter;
 		padding-right: $spacing__gutter;
 		position: relative;
+
+		@include sm {
+			padding-left: 60px;
+		}
 
 		.single & {
 			padding-left: $spacing__gutter;
@@ -158,12 +162,14 @@ article.post {
 	.tags-links,
 	.edit-link {
 		display: none;
+
+		.single & {
+			display: block;
+		}
 	}
 
-	&.single .cat-links,
-	&.single .tags-links,
-	&.single .edit-link {
-		display: inline;
+	.entry-footer {
+		padding-bottom: $spacing__gutter;
 	}
 
 	// Images alignment

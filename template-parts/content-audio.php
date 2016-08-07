@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="video-container">
-		<?php echo readmore_get_first_embed(get_the_ID()); ?>
+		<?php echo readmore_get_first_embed($post); ?>
 	</div>
 
 	<header class="entry-header">
@@ -34,11 +34,7 @@
 	<div class="entry-content">
 		<?php
 			if ( is_single() ) :
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'readmore' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
+				readmore_the_content_without_first_embed($post);
 
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'readmore' ),
