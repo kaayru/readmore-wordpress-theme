@@ -33,7 +33,7 @@ add_filter( 'body_class', 'readmore_body_classes' );
  * Adds class to the body depending on the sidebar presence
  * @return array
  */
-function readmore_sidebar_body_class() 
+function readmore_sidebar_body_class($classes) 
 {
 	$display_mode = get_theme_mod('readmore_general_layout', 1);
 	
