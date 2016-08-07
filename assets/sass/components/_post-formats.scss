@@ -1,5 +1,6 @@
-// Link
-article.post.format-link {
+// Link & Quotes
+article.post.format-link,
+article.post.format-quote {
 	margin-bottom: 0;
 
 	.entry-content {
@@ -13,5 +14,13 @@ article.post.format-link {
 		p {
 			margin-bottom: 0;
 		}
+	}
+}
+
+// Quotes
+article.post.format-quote {
+	.entry-content {
+		text-align: center;
+		@include font-size-quote();
 	}
 }
