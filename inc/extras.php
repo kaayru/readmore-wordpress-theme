@@ -83,7 +83,7 @@ add_filter( 'body_class', 'readmore_sidebar_body_class' );
  */
 function readmore_get_first_embed( $postId )
 {
-	$post = get_post($postId);
+	$post = get_post( $postId );
     $content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
     $embeds = get_media_embedded_in_content( $content );
     
