@@ -3,7 +3,7 @@ article.post {
 
 	&.hentry {
 		margin: 0 0 $spacing__paragraph;
-		padding: 0 0 $spacing__paragraph;
+		padding: 0;
 		background-color: $color__foreground;
 		position: relative;
 		z-index: 0;
@@ -32,6 +32,10 @@ article.post {
 	.entry-title,
 	.entry-title a {
 		color: $color__text;
+	}
+
+	.entry-title {
+		padding-top: 22px;
 	}
 
 	.updated:not(.published){
