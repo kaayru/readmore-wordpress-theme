@@ -20,11 +20,13 @@ textarea {
 	font-family: $font__main;
 	@include font-size-paragraph();
 	line-height: $font__line-height-body;
+	font-weight: 300;
 }
 
 p {
 	padding-bottom: $spacing__paragraph;
 	margin-bottom: 0;
+	font-weight: 300;
 }
 
 dfn, cite, em, i {
