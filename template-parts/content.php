@@ -12,7 +12,9 @@
 
 	<?php if( has_post_thumbnail() ) : ?>
 		<div class="hentry-thumbnail">
-			<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+				<img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+			</a>
 		</div>
 	<?php endif; ?>
 
@@ -21,7 +23,7 @@
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" title="' . get_the_title() . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
