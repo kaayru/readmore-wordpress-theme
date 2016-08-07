@@ -32,7 +32,11 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 $spacing__paragraph;
+	margin: 0;
+	@include font-size-quote();
+	font-weight: 100;
+	border: none;
+	background-color: $color__background;
 }
 
 address {

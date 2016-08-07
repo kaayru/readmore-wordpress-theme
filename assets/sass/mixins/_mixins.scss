@@ -14,6 +14,9 @@
 @mixin font-size-paragraph() {
 	@include font-size($fontsize__paragraph);
 }
+@mixin font-size-quote() {
+	@include font-size($fontsize__quote);
+}
 @mixin font-size-site-title() {
 	@include font-size($fontsize__site-title);
 }
