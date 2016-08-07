@@ -42,6 +42,10 @@ article.post {
 		padding-top: 20px;
 	}
 
+	.entry-title a:hover {
+		color: $color__accent;
+	}
+
 	.updated:not(.published){
 		display: none;
 	}
@@ -182,5 +186,15 @@ article.post {
 	.readmore {
 		color: $color__accent;
 		font-weight: 500;
+	}
+
+	.single & blockquote {
+		background-color: $color__primary;
+		color: $color__foreground;
+		margin-left: -$spacing__gutter;
+		margin-right: -$spacing__gutter;
+		margin-bottom: $spacing__paragraph;
+		padding-top: $spacing__paragraph;
+		text-align: center;
 	}
 }

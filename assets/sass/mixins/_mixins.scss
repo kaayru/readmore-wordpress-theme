@@ -23,8 +23,8 @@
 @mixin font-size-post-title() {
 	@include font-size($fontsize__post-title);
 }
-@mixin font-size-headings() {
-	@include font-size($fontsize__headings);
+@mixin font-size-headings($h: 'h2') {
+	@include font-size(map-get($fontsize__headings, $h));
 }
 @mixin font-size-menu() {
 	@include font-size($fontsize__menu);

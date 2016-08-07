@@ -4,7 +4,7 @@ body {
 }
 
 hr {
-	background-color: $color__background;
+	background-color: $color__grey-light;
 	border: 0;
 	height: 1px;
 	margin-bottom: $spacing__paragraph;
@@ -114,8 +114,17 @@ h1 {
 h2 {
 	@include font-size-post-title();
 }
-h3, h4, h5, h6 {
-	@include font-size-headings();
+h3 {
+	@include font-size-headings('h3');
+}
+h4 {
+	@include font-size-headings('h4');
+}
+h5 {
+	@include font-size-headings('h5');
+}
+h6 {
+	@include font-size-headings('h6');
 }
 
 //== Grid System
