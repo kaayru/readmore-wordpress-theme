@@ -3,7 +3,7 @@ $toggle_size: 50px;
 body {
 	// Prepare the .site div to slide
 	.site {
-		transition: transform 0.3s ease;
+		@include standard-transition(transform);
 		@include enhance-cpu();
 	}
 
