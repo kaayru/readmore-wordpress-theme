@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "flexslider": "^2.6.0",
     "get-gulp-args": "0.0.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-if": "^2.0.1",
