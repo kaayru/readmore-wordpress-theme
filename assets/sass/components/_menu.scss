@@ -34,7 +34,7 @@ body {
 
     @include sm() {
     	top: $spacing__gutter;
-    	right: $spacing__gutter;
+    	right: 0;
     }
 
     @include md() {

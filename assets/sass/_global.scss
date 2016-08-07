@@ -38,7 +38,6 @@ blockquote {
 	@include font-size-quote();
 	font-weight: 100;
 	border: none;
-	background-color: $color__background;
 }
 
 address {
@@ -155,6 +154,8 @@ h3, h4, h5, h6 {
 	}
 }
 
-#primary.content-area {
-	padding: 0;
+@include smMax() {
+	#primary.content-area {
+		padding: 0;
+	}
 }
