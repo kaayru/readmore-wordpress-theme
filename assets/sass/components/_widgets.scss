@@ -4,7 +4,7 @@
 	background-color: $color__foreground;
 
 	h2 {
-		font-family: roboto;
+		font-family: $font__main;
 		@include font-size-headings('h4');
 		padding-top: 0;
 		padding-bottom: $spacing__paragraph/2;
@@ -48,6 +48,30 @@
 			&:hover {
 				background-color: darken($color__accent, 10);
 			}
+		}
+	}
+
+	&.widget_recent_entries {
+		ul {
+			@include reset_list();
+		}
+
+		li {
+			padding-top: $spacing__paragraph/2;
+		}
+
+		a {
+			color: $color__text;
+
+			&:hover {
+				color: $color__accent;
+			}
+		}
+
+		.post-date {
+			display: block;
+			font-size: 11px;
+			color: $color__grey-light;
 		}
 	}
 }
