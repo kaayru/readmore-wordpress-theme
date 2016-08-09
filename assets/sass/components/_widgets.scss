@@ -1,9 +1,53 @@
 .widget {
-	margin: 0 0 $spacing__paragraph;
+	margin: 0 0 $spacing__gutter;
+	padding: $spacing__gutter*1.5;
 	background-color: $color__foreground;
+
+	h2 {
+		font-family: roboto;
+		@include font-size-headings('h4');
+		padding-top: 0;
+		padding-bottom: $spacing__paragraph/2;
+		margin: 0;
+	}
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+
+	&.widget_search {
+		label {
+			display: block;
+			width: 100%;
+		}
+
+		input {
+			outline: 0;
+		}
+
+		input[type="search"] {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			border: 1px solid $color__primary;
+			padding: 5px 15px;
+			margin-bottom: $spacing__paragraph/2;
+
+			&:hover {
+				border-color: $color__accent;
+			}
+		}
+
+		input[type="submit"] {
+			background-color: $color__accent;
+			color: $color__foreground;
+			text-transform: uppercase;
+			font-size: 15px;
+
+			&:hover {
+				background-color: darken($color__accent, 10);
+			}
+		}
 	}
 }
