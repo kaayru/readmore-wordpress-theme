@@ -11,19 +11,35 @@
 		margin: 0;
 	}
 
+	ul {
+		@include reset_list();
+	}
+
+	li {
+		padding-top: $spacing__paragraph/2;
+	}
+
+	a {
+		color: $color__text;
+
+		&:hover {
+			color: $color__accent;
+		}
+	}
+
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+
+	input {
+		outline: 0;
 	}
 
 	&.widget_search {
 		label {
 			display: block;
 			width: 100%;
-		}
-
-		input {
-			outline: 0;
 		}
 
 		input[type="search"] {
@@ -52,26 +68,38 @@
 	}
 
 	&.widget_recent_entries {
-		ul {
-			@include reset_list();
+		.post-date {
+			display: block;
+			font-size: 11px;
+			color: $color__grey-light;
 		}
+	}
 
+	&.widget_recent_comments {
 		li {
-			padding-top: $spacing__paragraph/2;
+			font-size: 11px;
+			color: $color__grey-light;
 		}
 
 		a {
-			color: $color__text;
+			color: $color__primary;
 
 			&:hover {
 				color: $color__accent;
 			}
 		}
 
-		.post-date {
+		.comment-author-link {
 			display: block;
-			font-size: 11px;
-			color: $color__grey-light;
+
+			a {
+				color: $color__text;
+				@include font-size-paragraph();
+
+				&:hover {
+					color: $color__accent;
+				}
+			}
 		}
 	}
 }
