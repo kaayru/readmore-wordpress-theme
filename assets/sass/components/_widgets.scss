@@ -128,6 +128,27 @@
 		}
 	}
 
+	.tagcloud{
+		display: flex;
+		flex-wrap: wrap;
+
+		a {
+			font-size: 12px !important;
+			font-weight: bold;
+		    padding: 8px 11px;
+		    line-height: 1;
+		    margin: 0 5px 5px 0;
+		    background: $color__td__background;
+		    color: $color__foreground;
+		    border-radius: 3px;
+			@include standard-transition(background);
+
+			&:hover {
+				background: $color__accent;
+			}
+		}
+	}
+
 	&.widget_rss {
 		h2 .rsswidget:first-child {
 			display: none;
