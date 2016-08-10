@@ -12,6 +12,13 @@ $color__background-ins: #fff9c0;
 
 $color__grey-light: #c5cdd1;
 
+//== Table Colors
+$color__table__background: darken( saturate( adjust-hue( $color__background, 1deg ), 26 ), 23 );
+$color__td__background: darken( saturate( adjust-hue( $color__background, 2deg ), 13 ), 16 );
+$color__td__background--disabled: darken( saturate( adjust-hue( $color__background, 2deg ), 8 ), 11 );
+$color__td__background--accent: $color__accent;
+$color__td__background--active: $color__primary;
+
 //== Font
 $font__main: 'Roboto', Helvetica;
 $font__heading: 'BioRhyme', Helvetica;
