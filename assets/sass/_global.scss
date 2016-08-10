@@ -135,8 +135,7 @@ h6 {
 
 //== Grid System
 #content,
-.site-header,
-.site-footer .site-info {
+.site-header {
 	@extend .container;
 }
 .sidebar-right,

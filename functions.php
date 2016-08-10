@@ -61,9 +61,9 @@ function readmore_setup() {
 		'caption',
 	) );
 
-	add_theme_support( 'post-formats', array( 
-		'video', 
-		'link', 
+	add_theme_support( 'post-formats', array(
+		'video',
+		'link',
 		'quote',
 		'gallery',
 		'image',
@@ -94,6 +94,36 @@ function readmore_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'readmore' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'readmore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'readmore' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'readmore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'readmore' ),
+		'id'            => 'footer-2',
+		'description'   => esc_html__( 'Add widgets here.', 'readmore' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'readmore' ),
+		'id'            => 'footer-3',
 		'description'   => esc_html__( 'Add widgets here.', 'readmore' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
