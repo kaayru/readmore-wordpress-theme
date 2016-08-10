@@ -48,3 +48,11 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+// Remove FontAwesome icon
+@mixin cancel-fa() {
+	&:before {
+		margin-right: 0;
+		content: '';
+	}
+}
