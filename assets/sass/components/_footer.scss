@@ -1,5 +1,7 @@
 .site-footer {
 	background-color: darken($color__background, 10);
+	margin-top: $spacing__gutter*2;
+	color: $color__foreground;
 
 	.site-info {
 		padding: $spacing__gutter 0;
