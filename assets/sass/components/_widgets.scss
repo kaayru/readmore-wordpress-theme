@@ -23,6 +23,13 @@
 			@extend .fa-angle-right:before;
 			margin-right: 10px;
 		}
+
+		&.current-cat,
+		&.current-menu-item {
+			& > a {
+				color: $color__primary;
+			}
+		}
 	}
 
 	a {
@@ -184,5 +191,37 @@
 	            }
 	        }
 	    }
+	}
+
+	&.widget_nav_menu {
+		padding: 0;
+
+		h2 {
+			padding: $spacing__gutter*1.5;
+		}
+
+		li {
+			padding: $spacing__gutter 0;
+		}
+
+		ul.menu {
+			& > li {
+				padding: $spacing__gutter $spacing__gutter*1.5;
+				border-top: 1px solid $color__grey-light;
+
+				& > a {
+					@include cancel-fa;
+				}
+			}
+
+			& ul {
+				padding-top: 5px;
+				@include font-size-code;
+
+				& > li {
+					padding: 0;
+				}
+			}
+		}
 	}
 }
