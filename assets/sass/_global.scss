@@ -127,6 +127,12 @@ h6 {
 	@include font-size-headings('h6');
 }
 
+.page-header {
+	margin: 0 0 $spacing__gutter;
+	padding: $spacing__paragraph;
+	background: $color__foreground;
+}
+
 //== Grid System
 #content,
 .site-header,

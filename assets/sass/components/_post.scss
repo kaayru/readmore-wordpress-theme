@@ -1,6 +1,6 @@
-article.post {
-	$post_format_icon_size: 40px;
-
+//== Styles for both posts and pages
+article.post,
+article.page {
 	&.hentry {
 		margin: 0 0 5px;
 		padding: 0;
@@ -15,14 +15,6 @@ article.post {
 		padding-left: $spacing__gutter;
 		padding-right: $spacing__gutter;
 		position: relative;
-
-		@include sm {
-			padding-left: 60px;
-		}
-
-		.single & {
-			padding-left: $spacing__gutter;
-		}
 	}
 
 	.page-content,
@@ -36,7 +28,7 @@ article.post {
 		margin: 0 0 $spacing__paragraph;
 	}
 
-	// Hentry header 
+	// Hentry header
 	.entry-title,
 	.entry-title a {
 		color: $color__text;
@@ -63,6 +55,77 @@ article.post {
 		margin-right: 5px;
 		width: 15px;
 	}
+
+	// Hentry Footer
+	.cat-links,
+	.tags-links,
+	.edit-link {
+		display: none;
+
+		.single & {
+			display: block;
+		}
+	}
+
+	.entry-footer {
+		padding-bottom: $spacing__gutter;
+	}
+
+	// Images alignment
+	.alignleft {
+		display: inline;
+		float: left;
+		margin-right: 1.5em;
+	}
+	.alignright {
+		display: inline;
+		float: right;
+		margin-left: 1.5em;
+	}
+	.aligncenter {
+		clear: both;
+		@include center-block;
+	}
+
+	// Hentry content
+	.readmore {
+		color: $color__accent;
+		font-weight: 500;
+	}
+
+
+}
+
+//== Quotes
+article {
+	.single &.post blockquote,
+	&.page blockquote {
+		background-color: $color__primary;
+		color: $color__foreground;
+		margin-left: -$spacing__gutter;
+		margin-right: -$spacing__gutter;
+		margin-bottom: $spacing__paragraph;
+		padding-top: $spacing__paragraph;
+		text-align: center;
+	}
+}
+
+//== Post specific styles
+article.post {
+	$post_format_icon_size: 40px;
+
+	.entry-header,
+	.entry-content,
+	.entry-footer {
+		@include sm {
+			padding-left: 60px;
+		}
+
+		.single & {
+			padding-left: $spacing__gutter;
+		}
+	}
+
 
 	.post-format-icon {
 		display: none;
@@ -96,7 +159,7 @@ article.post {
 		}
 	}
 
-	
+
 
 	&.format-standard {
 		.post-format-icon:before {
@@ -155,52 +218,5 @@ article.post {
 				}
 			}
 		}
-	}
-
-	// Hentry Footer
-	.cat-links,
-	.tags-links,
-	.edit-link {
-		display: none;
-
-		.single & {
-			display: block;
-		}
-	}
-
-	.entry-footer {
-		padding-bottom: $spacing__gutter;
-	}
-
-	// Images alignment
-	.alignleft {
-		display: inline;
-		float: left;
-		margin-right: 1.5em;
-	}
-	.alignright {
-		display: inline;
-		float: right;
-		margin-left: 1.5em;
-	}
-	.aligncenter {
-		clear: both;
-		@include center-block;
-	}
-
-	// Hentry content
-	.readmore {
-		color: $color__accent;
-		font-weight: 500;
-	}
-
-	.single & blockquote {
-		background-color: $color__primary;
-		color: $color__foreground;
-		margin-left: -$spacing__gutter;
-		margin-right: -$spacing__gutter;
-		margin-bottom: $spacing__paragraph;
-		padding-top: $spacing__paragraph;
-		text-align: center;
 	}
 }
