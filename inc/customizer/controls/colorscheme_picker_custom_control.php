@@ -15,7 +15,7 @@ if (class_exists('WP_Customize_Control'))
 
             $imageDirectory = get_stylesheet_directory_uri() . '/inc/customizer/img/color-schemes/';
             ?>
-            
+
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <em><?php echo esc_html( $this->description ); ?></em><br /><br />
 
@@ -45,6 +45,20 @@ if (class_exists('WP_Customize_Control'))
                 <label>
                     <input type="radio" value="6" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme6"); ?> />
                     <img src="<?php echo $imageDirectory; ?><?php _e('scheme6.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 6', 'readmore'); ?>" />
+                </label>
+            </div>
+            <div class="layout-customizer-control">
+                <label>
+                    <input type="radio" value="7" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme7"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme7.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 7', 'readmore'); ?>" />
+                </label>
+                <label>
+                    <input type="radio" value="8" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme7"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme8.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 8', 'readmore'); ?>" />
+                </label>
+                <label>
+                    <input type="radio" value="9" name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), "scheme7"); ?> />
+                    <img src="<?php echo $imageDirectory; ?><?php _e('scheme9.jpg', 'readmore'); ?>" alt="<?php _e('Scheme 9', 'readmore'); ?>" />
                 </label>
             </div>
         <?php }
