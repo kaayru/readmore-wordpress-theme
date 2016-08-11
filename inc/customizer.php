@@ -8,6 +8,7 @@
 require_once get_template_directory() . '/inc/customizer/colortheme.php';
 require_once get_template_directory() . '/inc/customizer/layout.php';
 require_once get_template_directory() . '/inc/customizer/title-tagline.php';
+require_once get_template_directory() . '/inc/customizer/footer.php';
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -38,4 +39,3 @@ function readmore_enqueue_customizer_stylesheet() {
 
 }
 add_action( 'customize_controls_print_styles', 'readmore_enqueue_customizer_stylesheet' );
-

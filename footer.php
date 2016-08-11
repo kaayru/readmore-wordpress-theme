@@ -37,9 +37,7 @@
 
 		<div class="site-info">
 			<div class="container">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'readmore' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'readmore' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'readmore' ), 'readmore', '<a href="http://www.vincentballut.fr" rel="designer">Vincent Ballut</a>' ); ?>
+				<?php echo get_theme_mod('readmore_footer', __('© ' . date('Y') . ' ' . get_bloginfo('name') )); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

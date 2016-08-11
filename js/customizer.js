@@ -35,7 +35,7 @@
 				} );
 				$( '.site-title a, .site-description' ).css( {
 					'color': to
-				} ); 
+				} );
 			}
 		} );
 	} );
@@ -55,7 +55,7 @@
     		var body = document.getElementsByTagName('body')[0]
 
     		body.classList.remove('no-sidebar');
-    		body.classList.remove('sidebar-right'); 
+    		body.classList.remove('sidebar-right');
     		body.classList.remove('sidebar-left');
 
     		if(to === '3') {
@@ -67,4 +67,11 @@
     		}
     	});
   	});
+
+	// Footer
+	wp.customize( 'readmore_footer', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-footer .site-info .container' ).text( to );
+		} );
+	} );
 } )( jQuery );
