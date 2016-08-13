@@ -1,10 +1,9 @@
 //== Colors
 $color__primary: readmore-color('primary');
-$color__secondary: readmore-color('secondary');
 $color__accent: readmore-color('accent');
 $color__foreground: readmore-color('foreground');
 $color__background: readmore-color('background');
-$color__text: #475055;
+$color__text: readmore-color('text');
 
 $color__background-hr: #ccc;
 $color__background-pre: #eee;

@@ -1,11 +1,11 @@
-// http://www.palettable.io/DECDBD-D6C1AB-A15408-FFFFFF-95A800
+// http://www.palettable.io/009AB5-FCFCFC-B4005D-18151F
 
 $colors: (
+	'background': #009AB5,
+	'foreground': #FCFCFC,
 	'primary': #B4005D,
 	'accent': #18151F,
-	'secondary': #8A5C74,
-	'foreground': #ffffff,
-	'background': #009AB5
+	'text': #475055
 );
 
 @import '../main';
