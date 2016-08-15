@@ -1,0 +1,32 @@
+.btn {
+    border-radius: 3px;
+    padding: 5px 10px;
+    @include standard-transition(background-color);
+
+    &.btn-primary {
+        color: $color__foreground;
+        background-color: $color__primary;
+
+        &:hover {
+            background-color: darken($color__primary, 10%);
+        }
+    }
+
+    &.btn-secondary {
+        color: $color__foreground;
+        background-color: $color__table__background;
+
+        &:hover {
+            background-color: darken($color__table__background, 10%);
+        }
+    }
+
+    &.btn-accent {
+        color: $color__foreground;
+        background-color: $color__accent;
+
+        &:hover {
+            background-color: darken($color__accent, 10);
+        }
+    }
+}
