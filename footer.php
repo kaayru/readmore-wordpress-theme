@@ -37,7 +37,8 @@
 
 		<div class="site-info">
 			<div class="container">
-				<?php echo get_theme_mod('readmore_footer', __('© ' . date('Y') . ' ' . get_bloginfo('name') )); ?>
+				<?php $defaultFooterText = sprintf(__( '&copy; %d %s', 'readmore' ), date('Y'), get_bloginfo('name')); ?>
+				<?php echo get_theme_mod('readmore_footer', $defaultFooterText); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
