@@ -11,6 +11,7 @@ article.page {
 
 	.entry-header,
 	.entry-content,
+	.entry-summary,
 	.entry-footer {
 		padding-left: $spacing__gutter;
 		padding-right: $spacing__gutter;
@@ -19,6 +20,7 @@ article.page {
 
 	.page-content,
 	.entry-content,
+	.entry-summary,
 	.entry-summary {
 		padding-top: $spacing__gutter;
 	}
@@ -68,7 +70,18 @@ article.page {
 	}
 
 	.entry-footer {
+		display: flex;
+		justify-content: space-between;
 		padding-bottom: $spacing__gutter;
+		padding-top: $spacing__gutter;
+
+		a {
+			color: $color__accent;
+
+			&:hover {
+				color: darken($color__accent, 10%);
+			}
+		}
 	}
 
 	// Images alignment
@@ -116,6 +129,7 @@ article.post {
 
 	.entry-header,
 	.entry-content,
+	.entry-summary,
 	.entry-footer {
 		@include sm {
 			padding-left: 60px;
