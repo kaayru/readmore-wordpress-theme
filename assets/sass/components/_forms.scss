@@ -1,8 +1,46 @@
-input, button {
-    border:none;
+input,
+textarea {
+    -webkit-appearance: none;
+    border: none;
+    background-color: $color__foreground;
+    color: $color__text;
+    border-radius: 3px;
+    padding: $spacing__paragraph/4 $spacing__paragraph/2;
+    margin: 0;
+    width: 100%;
+    border: 1px solid $color__grey-light;
+    box-sizing: border-box !important;
+
+    &:focus {
+        outline: none;
+        border-color: $color__accent;
+        color: $color__text;
+    }
 }
 
-input {
-    padding-left: 10px;
-    padding-right: 10px;
+textarea {
+    line-height: 160%;
+    height: 250px;
+    max-height: 50vh;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    @extend .btn;
+    @extend .btn-accent;
+}
+
+form {
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color__grey-light;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: $color__grey-light;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: $color__grey-light;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: $color__grey-light;
+    }
 }
