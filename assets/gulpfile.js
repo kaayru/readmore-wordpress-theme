@@ -16,6 +16,9 @@ const fs = require('fs');
 //Set the env to "dev" by default, you can use any another value to remove sourcemaps (gulp --env=prod)
 const isDev = (args.env || 'dev') === 'dev';
 
+//Set the color scheme to "*" by default, you can use any another value only compile one theme (gulp --colorscheme=1)
+const colorScheme = (args.colorscheme ? 'theme' + args.colorscheme : '*');
+
 function onError(error) {
     console.log(error);
     this.emit('end');
@@ -42,7 +45,7 @@ gulp.task('versionning', function() {
  */
 gulp.task('sass', function () {
     //Generates a sourcemap
-    gulp.src('./sass/color-themes/*.scss')
+    gulp.src('./sass/color-themes/' + colorScheme + '.scss')
         .pipe(gulpIf(isDev, sourcemaps.init()))
         .pipe(sass()).on('error', onError)
         .pipe(autoprefixer({ browsers: ["IE >= 10", 'Android >= 4.4', 'Firefox >= 24', 'iOS >= 7', '> 2%'] }))
