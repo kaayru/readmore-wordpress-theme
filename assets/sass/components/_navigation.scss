@@ -1,0 +1,9 @@
+.navigation {
+    background-color: $color__td__background;
+    padding: $spacing__gutter;
+
+    a {
+        @extend .btn;
+        @extend .btn-secondary;
+    }
+}

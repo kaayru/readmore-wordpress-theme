@@ -219,4 +219,8 @@ article.post {
 			}
 		}
 	}
+
+	.single & {
+		margin-bottom: 0;
+	}
 }
