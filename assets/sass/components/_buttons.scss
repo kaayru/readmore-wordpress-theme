@@ -2,10 +2,13 @@
     border-radius: 3px;
     padding: 5px 10px;
     @include standard-transition(background-color);
+    border: none;
 
     &.btn-primary {
-        color: $color__foreground;
-        background-color: $color__primary;
+        &, &:focus, &:active {
+            color: $color__foreground;
+            background-color: $color__primary;
+        }
 
         &:hover {
             background-color: darken($color__primary, 10%);
@@ -13,8 +16,10 @@
     }
 
     &.btn-secondary {
-        color: $color__foreground;
-        background-color: $color__table__background;
+        &, &:focus, &:active {
+            color: $color__foreground;
+            background-color: $color__table__background;
+        }
 
         &:hover {
             background-color: darken($color__table__background, 10%);
@@ -22,11 +27,22 @@
     }
 
     &.btn-accent {
-        color: $color__foreground;
-        background-color: $color__accent;
+        &, &:focus, &:active {
+            color: $color__foreground;
+            background-color: $color__accent;
+        }
 
         &:hover {
             background-color: darken($color__accent, 10);
+        }
+    }
+
+    &.btn-grey {
+        color: $color__foreground;
+        background-color: $color__grey-light;
+
+        &:hover {
+            background-color: darken($color__grey-light, 10);
         }
     }
 }
