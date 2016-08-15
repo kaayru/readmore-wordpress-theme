@@ -143,11 +143,13 @@ if ( ! function_exists( 'readmore_scripts' ) ) :
  * Enqueue scripts and styles.
  */
 function readmore_scripts() {
-	wp_enqueue_style( 'readmore-color-theme', get_template_directory_uri() . '/css/color-themes/theme' . get_theme_mod('readmore_color_scheme', 1) . '.css' );
+	global $version;
 
-	wp_enqueue_script( 'readmore-libraries', get_template_directory_uri() . '/js/libraries.min.js', array(), '20151215', true );
+	wp_enqueue_style( 'readmore-color-theme', get_template_directory_uri() . '/css/color-themes/theme' . get_theme_mod('readmore_color_scheme', 1) . '.css', [], $version );
 
-	wp_enqueue_script( 'readmore-scripts', get_template_directory_uri() . '/js/script.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'readmore-libraries', get_template_directory_uri() . '/js/libraries.min.js', array(), $version, true );
+
+	wp_enqueue_script( 'readmore-scripts', get_template_directory_uri() . '/js/script.min.js', array(), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -175,3 +177,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the version file
+ */
+ if(file_exists(get_template_directory() . '/version.php')) {
+	 require get_template_directory() . '/version.php';
+}
