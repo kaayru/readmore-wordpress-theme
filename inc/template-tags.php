@@ -31,13 +31,13 @@ function readmore_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on"><i class="fa fa-clock-o"></i> ' . $posted_on . '</span><span class="byline"><i class="fa fa-user"></i> ' . $byline . '</span>'; 
+	echo '<span class="posted-on"><i class="fa fa-clock-o"></i> ' . $posted_on . '</span><span class="byline"><i class="fa fa-user"></i> ' . $byline . '</span>';
 
-	if ( ! is_single() && ! post_password_required() 
+	if ( ! is_single() && ! post_password_required()
 		&& comments_open() && get_comments_number() ) {
-		
+
 		echo '<span class="comments-link"><i class="fa fa-comments-o"></i> ';
-		comments_popup_link(''); 
+		comments_popup_link('');
 		echo '</span>';
 	}
 
@@ -63,16 +63,6 @@ function readmore_entry_footer() {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'readmore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
-
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'readmore' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 endif;
 
@@ -122,13 +112,13 @@ add_action( 'save_post',     'readmore_category_transient_flusher' );
 /**
  * Outputs a slider for post attachments
  * @param  WP_Post $post
- * @param  string $size 
+ * @param  string $size
  */
 function readmore_flexslider() {
 
 	if ( is_page()) :
 		$attachment_parent = $post->ID;
-	else : 
+	else :
 		$attachment_parent = get_the_ID();
 	endif;
 
@@ -141,14 +131,14 @@ function readmore_flexslider() {
                 'orderby'        => 'menu_order',
                 'order'           => 'ASC',
 	))) { ?>
-	
+
 		<div class="flexslider">
-		
+
 			<ul class="slides">
-	
-				<?php foreach($images as $image) { 
+
+				<?php foreach($images as $image) {
 					$attimg = wp_get_attachment_image($image->ID,'post-image'); ?>
-					
+
 					<li>
 						<?php echo $attimg; ?>
 						<?php if ( !empty($image->post_excerpt)) : ?>
@@ -157,12 +147,12 @@ function readmore_flexslider() {
 							</div>
 						<?php endif; ?>
 					</li>
-					
+
 				<?php }; ?>
-		
+
 			</ul>
-			
+
 		</div><?php
-		
+
 	}
 }
