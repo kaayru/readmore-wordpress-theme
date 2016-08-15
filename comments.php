@@ -1,85 +1,86 @@
-<?php
-/**
- * The template for displaying comments.
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ReadMore
- */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
+<?php if ( post_password_required() )
 	return;
-}
 ?>
 
-<div id="comments" class="comments-area">
+	<?php if ( have_comments() ) : ?>
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'readmore' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2>
+		<a name="comments"></a>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'readmore' ); ?></h2>
-			<div class="nav-links">
+		<div class="comments">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'readmore' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'readmore' ) ); ?></div>
+			<h2 class="comments-title">
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+				<?php echo get_comments_number() . ' ';
+				echo _n( 'Comment' , 'Comments' , get_comments_number(), 'readmore' ); ?>
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+			</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'readmore' ); ?></h2>
-			<div class="nav-links">
+			<ol class="commentlist">
+			    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'readmore_comment' ) ); ?>
+			</ol>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'readmore' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'readmore' ) ); ?></div>
+			<?php if (!empty($comments_by_type['pings'])) : ?>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
+				<div class="pingbacks">
 
-	endif; // Check for have_comments().
+					<div class="pingbacks-inner">
 
+						<h3 class="pingbacks-title">
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+							<?php echo count($wp_query->comments_by_type[pings]) . ' ';
+							echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'readmore' ); ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'readmore' ); ?></p>
-	<?php
-	endif;
+						</h3>
 
-	comment_form();
+						<ol class="pingbacklist">
+						    <?php wp_list_comments( array( 'type' => 'pings', 'callback' => 'readmore_comment' ) ); ?>
+						</ol>
+
+					</div>
+
+				</div>
+
+			<?php endif; ?>
+
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+
+				<div class="comment-nav-below post-nav" role="navigation">
+
+					<h3 class="assistive-text section-heading"><?php _e( 'Comment Navigation', 'readmore' ); ?></h3>
+
+					<div class="post-nav-older"><?php previous_comments_link( '&laquo; ' . __('Older','readmore') . '<span> ' . __('Comments', 'readmore') . '</span>'); ?></div>
+
+					<div class="post-nav-newer"><?php next_comments_link( __('Newer','readmore') . '<span> ' . __('Comments', 'readmore') . '</span>  &raquo;' ); ?></div>
+
+					<div class="clear"></div>
+
+				</div> <!-- /comment-nav-below -->
+
+			<?php endif; ?>
+
+		</div><!-- /comments -->
+
+	<?php endif; ?>
+
+	<?php if ( ! comments_open() && !is_page() ) : ?>
+
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'readmore' ); ?></p>
+
+	<?php endif; ?>
+
+	<?php $comments_args = array(
+
+		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.', 'readmore' ) . '</p>',
+
+		'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="6" required>' . '</textarea></p>',
+
+		'fields' => apply_filters( 'comment_form_default_fields', array(
+			'author' => '<p class="comment-form-author">' . '<input id="author" name="author" type="text" placeholder="' . __('Name','readmore') . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />' . '<label for="author">' . __('Author','readmore') . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
+			'email' => '<p class="comment-form-email">' . '<input id="email" name="email" type="text" placeholder="' . __('Email','readmore') . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><label for="email">' . __('Email','readmore') . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
+			'url' => '<p class="comment-form-url">' . '<input id="url" name="url" type="text" placeholder="' . __('Website','readmore') . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /><label for="url">' . __('Website','readmore') . '</label></p>')
+		),
+	);
+
+	comment_form($comments_args);
+
 	?>
-
-</div><!-- #comments -->

@@ -1,0 +1,60 @@
+// Link
+article.post.format-link {
+
+	.entry-content {
+		background-color: $color__accent;
+		color: $color__foreground;
+
+		a {
+			color: $color__foreground;
+			font-weight: 500;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		.single & {
+			margin-top: $spacing__gutter;
+		}
+	}
+
+	.post-format-icon {
+		background-color: $color__foreground;
+		color: $color__accent;
+	}
+
+
+}
+
+// Quotes
+article.post.format-quote {
+	.entry-content {
+		text-align: center;
+		@include font-size-quote();
+		background-color: $color__primary;
+		color: $color__foreground;
+
+		a {
+			color: $color__foreground;
+			font-weight: 500;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		.single & {
+			margin-top: $spacing__gutter;
+		}
+	}
+
+	.post-format-icon {
+		background-color: $color__foreground;
+		color: $color__primary;
+	}
+}

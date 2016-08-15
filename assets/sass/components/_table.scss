@@ -1,0 +1,32 @@
+table {
+    background: $color__table__background;
+    color: $color__foreground;
+    position: relative;
+    margin: 0 0 1.5em;
+    width: 100%;
+
+
+    caption {
+        padding: $spacing__gutter;
+    }
+
+    &, th, td {
+        text-align: center;
+    }
+
+    td,th {
+        background-color: $color__td__background;
+
+        &.disabled {
+            background-color: $color__td__background--disabled;
+        }
+
+        &.accent {
+            background-color: $color__td__background--accent;
+        }
+
+        &.active {
+            background-color: $color__td__background--active;
+        }
+    }
+}

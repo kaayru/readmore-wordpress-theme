@@ -1,0 +1,24 @@
+.layout-customizer-control {
+	display: flex;
+}
+
+.layout-customizer-control input {
+	display: none;
+}
+
+.layout-customizer-control label {
+	display: block;
+	margin-right: 10px;
+}
+
+.layout-customizer-control label img {
+	border: 2px solid white;
+}
+
+.layout-customizer-control input:checked+img {
+	border: 2px solid #008ec2;
+}
+
+.layout-customizer-control span {
+	display: block;
+}

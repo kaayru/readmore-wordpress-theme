@@ -1,0 +1,11 @@
+.site-footer {
+	background-color: darken($color__background, 10);
+	margin-top: $spacing__gutter*2;
+	padding: $spacing__gutter 0 0 0;
+
+	.site-info {
+		padding: $spacing__gutter 0;
+		color: $color__foreground;
+		background-color: $color__background;
+	}
+}

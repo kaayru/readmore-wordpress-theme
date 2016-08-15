@@ -1,0 +1,29 @@
+.navigation.post-navigation {
+    background-color: $color__td__background;
+    padding: $spacing__gutter;
+    margin-bottom: 0;
+
+    @include md {
+        margin-bottom: $spacing__gutter;
+    }
+
+    @include smMax {
+        .nav-links > div {
+            float: none;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+    }
+
+    .nav-links > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    a {
+        @extend .btn;
+        @extend .btn-secondary;
+    }
+}
