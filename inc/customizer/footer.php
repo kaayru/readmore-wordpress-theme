@@ -1,5 +1,6 @@
 <?php
 
+if ( ! function_exists( 'readmore_customizer_footer' ) ) :
 function readmore_customizer_footer($wp_customize) {
 
     $wp_customize->add_section( 'readmore_footer', array(
@@ -21,5 +22,5 @@ function readmore_customizer_footer($wp_customize) {
         )
     ) );
 }
-
+endif;
 add_action( 'customize_register', 'readmore_customizer_footer' );

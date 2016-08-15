@@ -1,13 +1,14 @@
-<?php 
+<?php
 
 require_once get_template_directory() . '/inc/customizer/controls/layout_picker_custom_control.php';
 
+if ( ! function_exists( 'readmore_customizer_layouts' ) ) :
 function readmore_customizer_layouts($wp_customize) {
 
     $wp_customize->add_section( 'readmore_layouts', array(
         'title' => __('Layouts', 'readmore'),
         'priority' => 20
-    ) ); 
+    ) );
 
     $wp_customize->add_setting( 'readmore_general_layout', array(
         'default' => '1',
@@ -22,5 +23,5 @@ function readmore_customizer_layouts($wp_customize) {
         )
     ) );
 }
-
+endif;
 add_action( 'customize_register', 'readmore_customizer_layouts' );

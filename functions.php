@@ -73,6 +73,7 @@ function readmore_setup() {
 endif;
 add_action( 'after_setup_theme', 'readmore_setup' );
 
+if ( ! function_exists( 'readmore_content_width' ) ) :
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -83,8 +84,11 @@ add_action( 'after_setup_theme', 'readmore_setup' );
 function readmore_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'readmore_content_width', 640 );
 }
+endif;
+
 add_action( 'after_setup_theme', 'readmore_content_width', 0 );
 
+if ( ! function_exists( 'readmore_widgets_init' ) ) :
 /**
  * Register widget area.
  *
@@ -131,8 +135,10 @@ function readmore_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+endif;
 add_action( 'widgets_init', 'readmore_widgets_init' );
 
+if ( ! function_exists( 'readmore_scripts' ) ) :
 /**
  * Enqueue scripts and styles.
  */
@@ -147,6 +153,7 @@ function readmore_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+endif;
 add_action( 'wp_enqueue_scripts', 'readmore_scripts' );
 
 /**

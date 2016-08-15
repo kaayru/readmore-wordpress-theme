@@ -66,6 +66,7 @@ function readmore_entry_footer() {
 }
 endif;
 
+if ( ! function_exists( 'readmore_categorized_blog' ) ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -95,7 +96,9 @@ function readmore_categorized_blog() {
 		return false;
 	}
 }
+endif;
 
+if ( ! function_exists( 'readmore_category_transient_flusher' ) ) :
 /**
  * Flush out the transients used in readmore_categorized_blog.
  */
@@ -106,9 +109,11 @@ function readmore_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'readmore_categories' );
 }
+endif;
 add_action( 'edit_category', 'readmore_category_transient_flusher' );
 add_action( 'save_post',     'readmore_category_transient_flusher' );
 
+if ( ! function_exists( 'readmore_flexslider' ) ) :
 /**
  * Outputs a slider for post attachments
  * @param  WP_Post $post
@@ -156,3 +161,4 @@ function readmore_flexslider() {
 
 	}
 }
+endif;

@@ -7,6 +7,7 @@
  * @package ReadMore
  */
 
+if ( ! function_exists( 'readmore_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -27,8 +28,10 @@ function readmore_body_classes( $classes )
 
 	return $classes;
 }
+endif;
 add_filter( 'body_class', 'readmore_body_classes' );
 
+if ( ! function_exists( 'readmore_sidebar_body_class' ) ) :
 /**
  * Adds class to the body depending on the sidebar presence
  * @return array
@@ -49,8 +52,9 @@ function readmore_sidebar_body_class($classes)
 
 	return $classes;
 }
+endif;
 
-
+if ( ! function_exists( 'readmore_custom_excerpt_length' ) ) :
 /**
  * Filter the except length to 20 characters.
  *
@@ -61,8 +65,10 @@ function readmore_custom_excerpt_length( $length )
 {
     return 40;
 }
+endif;
 add_filter( 'excerpt_length', 'readmore_custom_excerpt_length', 999 );
 
+if ( ! function_exists( 'readmore_excerpt_more' ) ) :
 /**
  * Filter the excerpt "read more" string.
  *
@@ -73,9 +79,11 @@ function readmore_excerpt_more( $more )
 {
     return sprintf('... <a class="readmore" href="%s" title="%s">%s</a>', get_the_permalink(), get_the_title(), __('Read more', 'readmore'));
 }
+endif;
 add_filter( 'excerpt_more', 'readmore_excerpt_more' );
 add_filter( 'body_class', 'readmore_sidebar_body_class' );
 
+if ( ! function_exists( 'readmore_get_first_embed' ) ) :
 /**
  * Returns the first embeded content in a post
  * @param  int $postId
@@ -90,7 +98,9 @@ function readmore_get_first_embed( $post )
     	return $embeds[0];
     }
 }
+endif;
 
+if ( ! function_exists( 'readmore_the_content_without_first_embed' ) ) :
 function readmore_the_content_without_first_embed( $post )
 {
 	$firstEmbed = readmore_get_first_embed($post);
@@ -98,7 +108,9 @@ function readmore_the_content_without_first_embed( $post )
 
 	echo str_replace($firstEmbed, '', $content);
 }
+endif;
 
+if ( ! function_exists( 'readmore_comment' ) ) :
 function readmore_comment( $comment, $args, $depth )
 {
 	$GLOBALS['comment'] = $comment;
@@ -156,3 +168,4 @@ function readmore_comment( $comment, $args, $depth )
 			break;
 	endswitch;
 }
+endif;
