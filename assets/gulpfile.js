@@ -12,6 +12,7 @@ const gulpIf = require('gulp-if');
 const autoprefixer = require('gulp-autoprefixer');
 const args = require('get-gulp-args')();
 const fs = require('fs');
+const del = require('del');
 
 //Set the env to "dev" by default, you can use any another value to remove sourcemaps (gulp --env=prod)
 const isDev = (args.env || 'dev') === 'dev';
@@ -45,7 +46,7 @@ gulp.task('versionning', function() {
  */
 gulp.task('sass', function () {
     //Generates a sourcemap
-    gulp.src('./sass/color-themes/' + colorScheme + '.scss')
+    return gulp.src('./sass/color-themes/' + colorScheme + '.scss')
         .pipe(gulpIf(isDev, sourcemaps.init()))
         .pipe(sass()).on('error', onError)
         .pipe(autoprefixer({ browsers: ["IE >= 10", 'Android >= 4.4', 'Firefox >= 24', 'iOS >= 7', '> 2%'] }))
@@ -95,3 +96,19 @@ gulp.task('watch', function() {
     gulp.watch(['sass/**/*.scss'], ['sass']);
     gulp.watch('javascript/**/*.js', ['js']);
 });
+
+/**
+ * Cleanup Process
+ * Caution: it will destroy any .* file and folder, including the .git folder.
+ **/
+
+gulp.task('cleanup', function() {
+    return del([
+        '../*/**/.DS_Store',
+        '../*/**/*.map',
+        '../.*',
+        '../assets',
+    ], {
+        force: true
+    })
+})
