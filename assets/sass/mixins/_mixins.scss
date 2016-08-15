@@ -1,7 +1,7 @@
 @import "media_queries";
 
 // Transition effect on text color
-@mixin standard-transition($property: 'color') {
+@mixin standard-transition($property: color) {
 	transition: $property 0.2s ease;
 }
 
