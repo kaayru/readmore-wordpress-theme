@@ -12,7 +12,8 @@ function readmore_customizer_layouts($wp_customize) {
 
     $wp_customize->add_setting( 'readmore_general_layout', array(
         'default' => '1',
-        'transport' => 'postMessage'
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
     $wp_customize->add_control(new \Layout_Picker_Custom_control(
         $wp_customize, 'readmore_general_layout', array(

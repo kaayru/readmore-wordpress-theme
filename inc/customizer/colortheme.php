@@ -12,7 +12,8 @@ function readmore_customizer_colortheme($wp_customize) {
 
     $wp_customize->add_setting( 'readmore_color_scheme', array(
         'default' => '1',
-        'transport' => 'postMessage'
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
     $wp_customize->add_control(new \Color_Scheme_Picker_Custom_control(
         $wp_customize, 'readmore_color_scheme', array(
