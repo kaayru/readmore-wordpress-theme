@@ -13,6 +13,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const args = require('get-gulp-args')();
 const fs = require('fs');
 const del = require('del');
+const mustache = require("gulp-mustache");
 
 //Set the env to "dev" by default, you can use any another value to remove sourcemaps (gulp --env=prod)
 const isDev = (args.env || 'dev') === 'dev';
@@ -34,11 +35,18 @@ gulp.task('default', ['versionning', 'lib', 'sass', 'js', 'watch']);
  * VERSIONNING
  */
 gulp.task('versionning', function() {
+    // Sets the $version PHP variable for use in assets inclusion
     if (!args.version) {
         return;
     }
+    fs.writeFile('./../version.php', `<?php $version = \'${args.version}\';`);
 
-    fs.writeFile('./../version.php', '<?php $version = \'${args.version}\';');
+    // Sets version in the style.css theme file
+    gulp.src("style.css")
+        .pipe(mustache({
+            version: args.version
+        }))
+        .pipe(gulp.dest("../"));
 });
 
 /**
@@ -110,5 +118,5 @@ gulp.task('cleanup', function() {
         '../assets',
     ], {
         force: true
-    })
-})
+    });
+});
