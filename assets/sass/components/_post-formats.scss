@@ -8,6 +8,10 @@ article.post.format-link {
 		a {
 			color: $color__foreground;
 			font-weight: 500;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		p {
@@ -24,7 +28,7 @@ article.post.format-link {
 		color: $color__accent;
 	}
 
-	
+
 }
 
 // Quotes
