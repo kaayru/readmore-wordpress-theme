@@ -74,6 +74,7 @@ article.page {
 		justify-content: space-between;
 		padding-bottom: $spacing__gutter;
 		padding-top: $spacing__gutter;
+		clear: both;
 
 		a {
 			color: $color__accent;
