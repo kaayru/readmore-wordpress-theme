@@ -3,6 +3,7 @@
     padding: 5px 10px;
     @include standard-transition(background-color);
     border: none;
+    display: inline-block;
 
     &.btn-primary {
         &, &:focus, &:active {
