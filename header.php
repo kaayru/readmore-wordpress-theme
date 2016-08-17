@@ -26,10 +26,15 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php $logo = get_theme_mod('readmore_header_logo', null); ?>
+
 	        <div class="site-title">
-	        	<?php if($logo) { ?>
+	        	<?php if($logo) {
+					$themelogo_size = getimagesize($logo);
+				    $themelogo_width = $themelogo_size[0];
+				    $themelogo_height = $themelogo_size[1];
+					?>
 	            	<a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_html(bloginfo('name')); ?>" rel="home">
-	                    <img src="<?php echo esc_url( $logo ); ?>" alt="<?php esc_html( bloginfo('name') ); ?>"/>
+	                    <img src="<?php echo esc_url( $logo ); ?>" width="<?php echo $themelogo_width/2; ?>" alt="<?php esc_html( bloginfo('name') ); ?>"/>
 	            	</a>
 	            <?php } else { ?>
 	            	<?php if ( is_front_page() && is_home() ) { ?>
@@ -40,7 +45,7 @@
 	            <?php } ?>
 	        </div>
 		</div>
-		
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

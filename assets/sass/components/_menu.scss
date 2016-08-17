@@ -50,6 +50,7 @@ body {
     	width: 100%;
     	background-color: $color__foreground;
 		overflow-y: scroll;
+		padding: 0 10px;
 
 		@include md() {
 			position: static;
@@ -111,7 +112,7 @@ body {
 	// All li
 	li {
 		position: relative;
-		padding: $spacing__gutter 20px;
+		padding: $spacing__gutter 10px;
 		border-bottom: 1px solid $color__grey-light;
 
 		// li > a
@@ -181,6 +182,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	padding: 0;
+	border: 0;
 }
 
 @include md() {

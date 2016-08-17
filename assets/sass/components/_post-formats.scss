@@ -4,6 +4,7 @@ article.post.format-link {
 	.entry-content {
 		background-color: $color__accent;
 		color: $color__foreground;
+		padding-top: $spacing__gutter*2;
 
 		a {
 			color: $color__foreground;

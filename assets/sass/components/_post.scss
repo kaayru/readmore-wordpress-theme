@@ -74,6 +74,7 @@ article.page {
 		justify-content: space-between;
 		padding-bottom: $spacing__gutter;
 		padding-top: $spacing__gutter;
+		clear: both;
 
 		a {
 			color: $color__accent;
@@ -135,8 +136,28 @@ article.post {
 			padding-left: 60px;
 		}
 
+		@include md {
+			padding-right: 60px;
+		}
+
+		@include lg {
+			padding-right: 200px;
+		}
+
 		.single & {
 			padding-left: $spacing__gutter;
+
+			@include md {
+				padding-top: 15px;
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+
+			@include lg {
+				padding-top: 30px;
+				padding-left: 45px;
+				padding-right: 45px;
+			}
 		}
 	}
 
@@ -152,7 +173,7 @@ article.post {
 		color: #FFFFFF;
 		text-align: center;
 		vertical-align: baseline;
-		line-height: 2.8;
+		line-height: 2.6;
 		z-index: 2;
 		@include standard-transition(background);
 
@@ -173,7 +194,15 @@ article.post {
 		}
 	}
 
+	&.sticky {
+		.post-format-icon {
+			background-color: $color__accent;
 
+			&:before {
+				@extend .fa-thumb-tack:before;
+			}
+		}
+	}
 
 	&.format-standard {
 		.post-format-icon:before {
@@ -219,6 +248,9 @@ article.post {
 
 	// Featured thumbnail
 	.hentry-thumbnail {
+		text-align: center;
+		background-color: $color__grey-light;
+
 		@include sm {
 			overflow: hidden;
 

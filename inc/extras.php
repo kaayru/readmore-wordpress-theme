@@ -38,7 +38,7 @@ if ( ! function_exists( 'readmore_sidebar_body_class' ) ) :
  */
 function readmore_sidebar_body_class($classes)
 {
-	$display_mode = get_theme_mod('readmore_general_layout', 1);
+	$display_mode = get_theme_mod('readmore_general_layout', '1');
 
 	if ( $display_mode === '1' ) {
 		$classes[] = 'sidebar-left';
