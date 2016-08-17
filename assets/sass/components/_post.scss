@@ -239,6 +239,9 @@ article.post {
 
 	// Featured thumbnail
 	.hentry-thumbnail {
+		text-align: center;
+		background-color: $color__grey-light;
+
 		@include sm {
 			overflow: hidden;
 
