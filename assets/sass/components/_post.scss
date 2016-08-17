@@ -193,7 +193,15 @@ article.post {
 		}
 	}
 
+	&.sticky {
+		.post-format-icon {
+			background-color: $color__accent;
 
+			&:before {
+				@extend .fa-thumb-tack:before;
+			}
+		}
+	}
 
 	&.format-standard {
 		.post-format-icon:before {
