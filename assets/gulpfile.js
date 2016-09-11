@@ -14,6 +14,7 @@ const args = require('get-gulp-args')();
 const fs = require('fs');
 const del = require('del');
 const mustache = require("gulp-mustache");
+const zip = require('gulp-zip');
 
 //Set the env to "dev" by default, you can use any another value to remove sourcemaps (gulp --env=prod)
 const isDev = (args.env || 'dev') === 'dev';
@@ -30,6 +31,7 @@ function onError(error) {
  * DEFAULT
  */
 gulp.task('default', ['versionning', 'lib', 'sass', 'js', 'watch']);
+gulp.task('build', ['versionning', 'lib', 'sass', 'js'])
 
 /**
  * VERSIONNING
@@ -39,6 +41,7 @@ gulp.task('versionning', function() {
     if (!args.version) {
         return;
     }
+    console.log(args.version);
     fs.writeFile('./../version.php', `<?php $version = \'${args.version}\';`);
 
     // Sets version in the style.css theme file
@@ -105,18 +108,29 @@ gulp.task('watch', function() {
     gulp.watch('javascript/**/*.js', ['js']);
 });
 
-/**
- * Cleanup Process
- * Caution: it will destroy any .* file and folder, including the .git folder.
- **/
-
 gulp.task('cleanup', function() {
     return del([
-        '../*/**/.DS_Store',
-        '../*/**/*.map',
-        '../.*',
-        '../assets',
-    ], {
-        force: true
-    });
+        'tmp',
+        'zip'
+    ]);
+});
+
+gulp.task('zip', ['build', 'cleanup'], function() {
+    return gulp.src([
+        '../css/**',
+        '!../css/**/*.map',
+        '../fonts/**',
+        '../inc/**',
+        '../js/**',
+        '!../js/**/*.map',
+        '../languages/**',
+        '../template-parts/**',
+        '../*.php',
+        '../*.md',
+        '../*.css',
+        '../screenshot.png',
+        '../LICENSE'
+    ], { "base" : "../" }).pipe(gulp.dest('./tmp'))
+    .pipe(zip('readmore.zip'))
+    .pipe(gulp.dest('./zip'));
 });
