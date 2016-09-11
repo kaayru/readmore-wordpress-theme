@@ -1,4 +1,6 @@
 /assets/node_modules
+/assets/tmp
+/assets/zip
 /css
 /js
 /img/sprite.png
