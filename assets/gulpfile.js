@@ -131,6 +131,6 @@ gulp.task('zip', ['build', 'cleanup'], function() {
         '../screenshot.png',
         '../LICENSE'
     ], { "base" : "../" }).pipe(gulp.dest('./tmp'))
-    .pipe(zip('readmore.zip'))
+    .pipe(zip('utalk.zip'))
     .pipe(gulp.dest('./zip'));
 });

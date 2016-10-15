@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ReadMore
+ * @package UTalk
  */
 
 ?>
@@ -37,8 +37,8 @@
 
 		<div class="site-info">
 			<div class="container">
-				<?php $defaultFooterText = sprintf(__( '&copy; %d %s', 'readmore' ), date('Y'), get_bloginfo('name')); ?>
-				<?php echo get_theme_mod('readmore_footer', $defaultFooterText); ?>
+				<?php $defaultFooterText = sprintf(__( '&copy; %d %s', 'utalk' ), date('Y'), get_bloginfo('name')); ?>
+				<?php echo get_theme_mod('utalk_footer', $defaultFooterText); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
