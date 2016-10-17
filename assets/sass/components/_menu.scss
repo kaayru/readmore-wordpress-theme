@@ -28,8 +28,8 @@ body {
 	clear: both;
 	display: block;
 	position: absolute;
-    top: $spacing__gutter/2;
-    right: $spacing__gutter/2;
+    top: $spacing__gutter;
+    right: $spacing__gutter;
     width: auto;
 
     @include sm() {
