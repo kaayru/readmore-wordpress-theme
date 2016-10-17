@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ReadMore
+ * @package UTalk
  */
 
 get_header(); ?>

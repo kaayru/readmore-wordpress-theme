@@ -1,8 +1,8 @@
-Readmore
+UTalk
 ===
 
 
-Thank you for downloading the `Readmore` WordPress theme! For documentation and demo, please head over to http://wp-themes.vincentballut.fr/themes/readmore9/.
+Thank you for downloading the `UTalk` WordPress theme! For documentation and demo, please head over to http://wp-themes.vincentballut.fr/themes/utalk1/.
 
 Happy blogging!<br />
 Vincent
@@ -11,7 +11,7 @@ This theme is under the GNU GENERAL PUBLIC LICENSE.
 
 ## Contribute
 
-You can fork and contribue to this theme on the Github page: https://github.com/kaayru/readmore-wordpress-theme
+You can fork and contribue to this theme on the Github page: https://github.com/kaayru/utalk-wordpress-theme
 
 
 ### Assets
@@ -28,4 +28,4 @@ Once again done with gulp. Give the command a **version number** and the style.c
 
 `gulp zip --env prod --version 1.0.1`
 
-The generated .zip file is localated in `assets/zip/readmore.zip`.
+The generated .zip file is localated in `assets/zip/utalk.zip`.

@@ -41,16 +41,16 @@
 	} );
 
 	// Color Theme
-  	wp.customize('readmore_color_scheme', function(value) {
+  	wp.customize('utalk_color_scheme', function(value) {
     	value.bind(function(to) {
-    		var link_element = $('link#readmore-color-theme-css');
+    		var link_element = $('link#utalk-color-theme-css');
     		var stylesheet_url = link_element.attr('href');
-    		$('link#readmore-color-theme-css').attr('href',stylesheet_url.replace(/(theme[0-9]+\.css)/, 'theme' + to + '.css'));
+    		$('link#utalk-color-theme-css').attr('href',stylesheet_url.replace(/(theme[0-9]+\.css)/, 'theme' + to + '.css'));
     	});
   	});
 
   	// Layout
-  	wp.customize('readmore_general_layout', function(value) {
+  	wp.customize('utalk_general_layout', function(value) {
     	value.bind(function(to) {
     		var body = document.getElementsByTagName('body')[0]
 
@@ -69,7 +69,7 @@
   	});
 
 	// Footer
-	wp.customize( 'readmore_footer', function( value ) {
+	wp.customize( 'utalk_footer', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-footer .site-info .container' ).text( to );
 		} );

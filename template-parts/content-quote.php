@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package ReadMore
+ * @package UTalk
  */
 ?>
 
@@ -18,7 +18,7 @@
 
 		if ( is_single() && 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php readmore_posted_on(); ?>
+				<?php utalk_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -30,7 +30,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'readmore' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'utalk' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -38,7 +38,7 @@
 
 	<?php if ( is_single() ) : ?>
 		<footer class="entry-footer">
-			<?php readmore_entry_footer(); ?>
+			<?php utalk_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-## -->

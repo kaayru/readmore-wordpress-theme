@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ReadMore
+ * @package UTalk
  */
 
 ?><!DOCTYPE html>
@@ -25,7 +25,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php $logo = get_theme_mod('readmore_header_logo', null); ?>
+			<?php $logo = get_theme_mod('utalk_header_logo', null); ?>
 
 	        <div class="site-title">
 	        	<?php if($logo) {
