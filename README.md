@@ -1,8 +1,8 @@
-Readmore
+UTalk
 ===
 
 
-Thank you for downloading the `Readmore` WordPress theme! For documentation and demo, please head over to http://wp-themes.vincentballut.fr/themes/utalk/.
+Thank you for downloading the `UTalk` WordPress theme! For documentation and demo, please head over to http://wp-themes.vincentballut.fr/themes/utalk/.
 
 Happy blogging!<br />
 Vincent
